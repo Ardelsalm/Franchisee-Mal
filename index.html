@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,10 +29,14 @@
 </head>
 <body class="bg-brand-light">
 
-    <main>
-        <!-- Hero Section -->
+    <!-- Fixed Header Banner -->
+    <header class="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-lg shadow-md z-50 py-1 md:py-2 text-center">
+        <img src="https://i.postimg.cc/Hnm6dFkZ/Sabhan-Furniture-Interior-Logo-png.png" alt="Sabhan Furniture & Interiors Logo" class="mx-auto h-12 sm:h-16 md:h-20 lg:h-24">
+    </header>
+
+    <main class="pt-24 sm:pt-28 md:pt-36 lg:pt-44"> <!-- Adjusted padding-top to prevent content from going under fixed header -->
+        <!-- Hero Section (Content starts after header) -->
         <section class="bg-white text-center py-20 px-4">
-            <img src="https://i.postimg.cc/Hnm6dFkZ/Sabhan-Furniture-Interior-Logo-png.png" alt="Sabhan Furniture & Interiors Logo" class="mx-auto mb-8 h-32">
             <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 text-brand-primary">Your Opportunity for Profitable Growth in Kerala</h1>
             <p class="text-xl md:text-2xl text-gray-700">Partner with a 10-Year Legacy of Excellence through a Secure Franchisee Model</p>
         </section>
@@ -41,14 +45,15 @@
         <section class="py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto">
                 <h2 class="text-4xl font-bold text-brand-primary mb-4">The Market is Booming. The Time is Now.</h2>
-                <p class="text-lg text-gray-600 mb-12">ഇന്ത്യൻ ഫർണിച്ചർ വിപണി അതിവേഗം വളരുകയാണ്. ഇത് വിശ്വാസ്യതയുള്ള, സംഘടിത ബ്രാൻഡുകളിലേക്ക് മാറിക്കൊണ്ടിരിക്കുന്നു. സാമ്പത്തികമായി ശക്തവും റിയൽ എസ്റ്റേറ്റ് മേഖലയിൽ കുതിച്ചുയരുന്നതുമായ കേരളം ഈ മാറ്റത്തിന്റെ മുൻനിരയിലാണ്.</p>
+                <p class="text-lg text-gray-600 mb-6">ഇന്ത്യൻ ഫർണിച്ചർ വിപണി അതിവേഗം വളരുകയാണ്. ഇത് വിശ്വാസ്യതയുള്ള, സംഘടിത ബ്രാൻഡുകളിലേക്ക് മാറിക്കൊണ്ടിരിക്കുന്നു. സാമ്പത്തികമായി ശക്തവും റിയൽ എസ്റ്റേറ്റ് മേഖലയിൽ കുതിച്ചുയരുന്നതുമായ കേരളം ഈ മാറ്റത്തിന്റെ മുൻനിരയിലാണ്.</p>
+                <p class="text-lg text-gray-700 font-semibold mb-12">India's furniture market projected to grow at a CAGR of <span class="text-brand-secondary">6.40% to 14%</span> by 2033!</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 <!-- Indian Market Growth -->
                 <div class="bg-white p-6 rounded-xl shadow-lg col-span-1 lg:col-span-2">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">India's Furniture Market Trajectory</h3>
-                    <p class="text-gray-600 mb-6">ദേശീയ വിപണി വലിയ വളർച്ചയ്ക്ക് തയ്യാറാണ്, ഇത് നിലവിലുള്ള കളിക്കാർക്ക് അനുകൂലമായ സാഹചര്യമാണ്.</p>
+                    <p class="text-gray-600 mb-6">ദേശീയ വിപണി വലിയ വളർച്ചയ്ക്ക് തയ്യാറാണ്, ഇത് നിലവിലുള്ള ഫർണിച്ചർ റിട്ടെയിലേഴ്സിന് അനുകൂലമായ സാഹചര്യമാണ്.</p>
                     <div class="h-80 w-full"><canvas id="marketGrowthChart"></canvas></div>
                 </div>
 
@@ -56,7 +61,7 @@
                 <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col justify-center items-center">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">The Shift to Organized Retail</h3>
                     <div class="chart-container"><canvas id="organizedSectorChart"></canvas></div>
-                    <p class="text-center text-gray-600 mt-4">Organized sector നിലവിൽ 10-21% ആണ്, ഇത് 2028-ഓടെ ഇരട്ടിയിലധികം വർധിക്കുമെന്ന് പ്രൊജക്റ്റ് ചെയ്യപ്പെടുന്നു, വർഷം 20% വളർച്ചയോടെ.</p>
+                    <p class="text-center text-gray-600 mt-4">The organized sector, currently 10-21%, is projected to <span class="font-bold text-brand-primary">more than double</span> its share to 67,635 Crores by 2028, growing at 20% annually.</p>
                 </div>
             </div>
         </section>
@@ -85,26 +90,85 @@
                     <p class="text-gray-700 mt-2">Luxury Apartment രജിസ്ട്രേഷനുകളിൽ ഗണ്യമായ വർധന</p>
                 </div>
             </div>
+            <div class="max-w-4xl mx-auto mt-12 bg-white p-6 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">New Building Density in Top Kerala Districts</h3>
+                <p class="text-gray-600 mb-6">Kerala recorded the highest building density in 8 years, reflecting vibrant construction activity.</p>
+                <div class="h-64 w-full"><canvas id="buildingDensityChart"></canvas></div>
+            </div>
         </section>
-        
+
+        <!-- The Modern Kerala Consumer -->
+        <section class="py-16 px-4 md:px-8">
+            <div class="text-center max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-brand-primary mb-4">The Modern Kerala Consumer</h2>
+                <p class="text-lg text-gray-600 mb-12">Kerala's sophisticated consumers demand more than just furniture; they seek quality, customization, and integrated solutions for their evolving lifestyles.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
+                    <div class="bg-brand-secondary text-white rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center text-xl font-bold">★</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Modern & Eclectic Designs</h3>
+                        <p class="text-gray-600 mt-1">Preference for contemporary, clean-lined designs over traditional, bulky pieces.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
+                    <div class="bg-brand-secondary text-white rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center text-xl font-bold">💡</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Quality, Durability & Sustainability</h3>
+                        <p class="text-gray-600 mt-1">Conscious choices towards eco-friendly materials and durable pieces that last longer.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
+                    <div class="bg-brand-secondary text-white rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center text-xl font-bold">✂</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Customization & Personalization</h3>
+                        <p class="text-gray-600 mt-1">High demand for bespoke furniture to fit unique tastes and optimize urban spaces.</p>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
+                    <div class="bg-brand-secondary text-white rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center text-xl font-bold">🗂️</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Modular Solutions</h3>
+                        <p class="text-gray-600 mt-1">High value placed on space-efficient, customizable, and practical modular furniture, especially kitchens.</p>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
+                    <div class="bg-brand-secondary text-white rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center text-xl font-bold">🔄</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Willingness to Upgrade</h3>
+                        <p class="text-gray-600 mt-1">Consumers are investing in reimagining living spaces, driving demand for quality upgrades and new functionality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Our Established Presence in Kerala -->
         <section class="py-16 px-4 md:px-8 bg-brand-light">
             <div class="text-center max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-brand-primary mb-4">കേരളത്തിലെ ഞങ്ങളുടെ നിലവിലുള്ള സാന്നിധ്യം</h2>
-                <p class="text-lg text-gray-600 mb-12">കേരളത്തിലെ പ്രധാന ജില്ലകളിൽ തന്ത്രപരമായി സ്ഥാപിച്ചിട്ടുള്ള വിജയകരമായ ഷോറൂമുകളിലൂടെ സബാൻ ഫർണിച്ചർ ശക്തമായ അടിത്തറ കെട്ടിപ്പടുത്തിട്ടുണ്ട്. ഞങ്ങളുടെ ബ്രാഞ്ചുകൾ വിപണിയെക്കുറിച്ചുള്ള ഞങ്ങളുടെ ധാരണയ്ക്കും പ്രവർത്തന മികവിനും തെളിവാണ്.</p>
+                <h2 class="text-4xl font-bold text-brand-primary mb-4">Our Established Presence in Kerala</h2>
+                <p class="text-lg text-gray-600 mb-12">സബാൻ ഫർണിച്ചർ കേരളത്തിലെ പ്രധാന ജില്ലകളിൽ തന്ത്രപരമായി സ്ഥാപിച്ചിട്ടുള്ള വിജയകരമായ ഷോറൂമുകളിലൂടെ ശക്തമായ അടിത്തറ കെട്ടിപ്പടുത്തിട്ടുണ്ട്. ഞങ്ങളുടെ ബ്രാഞ്ചുകൾ വിപണിയെക്കുറിച്ചുള്ള ഞങ്ങളുടെ ധാരണയ്ക്കും പ്രവർത്തന മികവിനും തെളിവാണ്.</p>
             </div>
+
+            <!-- New Directors Section -->
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg mb-12">
+                <h3 class="text-3xl font-bold text-brand-primary mb-4 text-center">Strategic Leadership & Vision</h3>
+                <p class="text-lg text-gray-700 mb-6 text-center">Sabhan Furniture's journey began with the visionary leadership of our directors, whose foresight and dedication established our first huge showroom at Pandikkad in 2014. Their active involvement continues to drive our legacy of excellence and expansion, ensuring strategic growth and market leadership.</p>
+                <img src="https://i.postimg.cc/9MLPF2jf/Directors-images.jpg" alt="Sabhan Furniture Directors" class="w-full h-auto rounded-lg shadow-md mx-auto object-cover">
+            </div>
+            
+            <!-- Existing Showroom Images -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                     <img src="https://i.postimg.cc/VvMQJ9Y5/Kondotty-Showroom.jpg" alt="Kondotty Showroom" class="w-full h-64 object-cover">
-                    <p class="p-4 text-center text-xl font-semibold text-gray-800">കൊണ്ടോട്ടി Showroom</p>
+                    <p class="p-4 text-center text-xl font-semibold text-gray-800">Kondotty Showroom</p>
                 </div>
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                     <img src="https://i.postimg.cc/DZR3fp3t/Omassery-Showroom.jpg" alt="Omassery Showroom" class="w-full h-64 object-cover">
-                    <p class="p-4 text-center text-xl font-semibold text-gray-800">ഓമശ്ശേരി Showroom</p>
+                    <p class="p-4 text-center text-xl font-semibold text-gray-800">Omassery Showroom</p>
                 </div>
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                     <img src="https://i.postimg.cc/fb2hpT2W/Pandikkad-Showroom.jpg" alt="Pandikkad Showroom" class="w-full h-64 object-cover">
-                    <p class="p-4 text-center text-xl font-semibold text-gray-800">പാണ്ടിക്കാട് Showroom</p>
+                    <p class="p-4 text-center text-xl font-semibold text-gray-800">Pandikkad Showroom</p>
                 </div>
             </div>
         </section>
@@ -113,29 +177,29 @@
         <!-- Introducing Sabhan (with Proposed Showroom) -->
          <section class="py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-brand-primary mb-4">നിങ്ങളുടെ വിശ്വസ്ത പങ്കാളി: സബാൻ ഫർണിച്ചർ</h2>
+                <h2 class="text-4xl font-bold text-brand-primary mb-4">Your Trusted Partner: Sabhan Furniture</h2>
                 <p class="text-lg text-gray-600 mb-12">പതിറ്റാണ്ടുകളുടെ വിശ്വാസവും ഭാവിയിലേക്കുള്ള വ്യക്തമായ കാഴ്ചപ്പാടും ഉള്ള സബാൻ ഫർണിച്ചർ, കേരളത്തിലെ organized furniture retail sector-ന് നേതൃത്വം നൽകാൻ തയ്യാറാണ്.</p>
             </div>
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
-                     <img src="https://i.postimg.cc/sXMRrdqY/Franchisee.jpg" alt="Proposed new franchisee showroom design" class="rounded-xl shadow-2xl w-full">
+                     <img src="https://i.postimg.cc/WDMvJNSK/Sabhan-Furniture-Logo-FR1.jpg" alt="Proposed new franchisee showroom design" class="rounded-xl shadow-2xl w-full">
                 </div>
                 <div class="grid grid-cols-2 gap-6 text-center">
                     <div class="bg-white p-6 rounded-xl shadow-lg">
                         <p class="text-5xl font-bold text-brand-secondary">10+</p>
-                        <p class="text-gray-700 mt-2 font-semibold">വർഷത്തെ പാരമ്പര്യം</p>
+                        <p class="text-gray-700 mt-2 font-semibold">Years of Legacy</p>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-lg">
                         <p class="text-5xl font-bold text-brand-secondary">100K+</p>
-                        <p class="text-gray-700 mt-2 font-semibold">സന്തുഷ്ടരായ ഉപഭോക്താക്കൾ</p>
+                        <p class="text-gray-700 mt-2 font-semibold">Satisfied Customers</p>
                     </div>
                      <div class="bg-white p-6 rounded-xl shadow-lg">
                         <p class="text-5xl font-bold text-brand-secondary">10</p>
-                        <p class="text-gray-700 mt-2 font-semibold">2030-ഓടെ Branches</p>
+                        <p class="text-gray-700 mt-2 font-semibold">Branches by 2030</p>
                     </div>
                      <div class="bg-white p-6 rounded-xl shadow-lg">
                         <p class="text-5xl font-bold text-brand-secondary">₹100Cr</p>
-                        <p class="text-gray-700 mt-2 font-semibold">2030-ഓടെ Revenue Target</p>
+                        <p class="text-gray-700 mt-2 font-semibold">Revenue Target by 2030</p>
                     </div>
                 </div>
             </div>
@@ -144,23 +208,23 @@
         <!-- FOCO Model -->
         <section class="bg-white py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-brand-primary mb-4">ഞങ്ങളുടെ വിജയിച്ച പങ്കാളിത്തം: FOCO Model</h2>
-                <p class="text-lg text-gray-600 mb-12">Franchisee Owned, Company Operated (FOCO) Model നിങ്ങളുടെ വിജയത്തിനായി രൂപകൽപ്പന ചെയ്ത ഒരു സുരക്ഷിത പങ്കാളിത്തമാണ്. നിങ്ങൾ ആസ്തികൾ സ്വന്തമാക്കുന്നു, ഞങ്ങൾ പ്രവർത്തനങ്ങൾ കൈകാര്യം ചെയ്യുന്നു, ഞങ്ങൾ ലാഭം പങ്കുവെക്കുന്നു.</p>
+                <h2 class="text-4xl font-bold text-brand-primary mb-4">Our Winning Partnership: The FOCO Model</h2>
+                <p class="text-lg text-gray-600 mb-12">Franchisee Owned, Company Operated (FOCO) Model നിങ്ങളുടെ വിജയത്തിനായി രൂപകൽപ്പന ചെയ്ത ഒരു സുരക്ഷിത പങ്കാളിത്തമാണ്. നിങ്ങൾ Assets സ്വന്തമാക്കുന്നു, ഞങ്ങൾ Operations കൈകാര്യം ചെയ്യുന്നു, ഞങ്ങൾ Profits പങ്കുവെക്കുന്നു.</p>
             </div>
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-center max-w-4xl mx-auto">
                 <div class="bg-brand-light p-8 rounded-xl shadow-md w-full md:w-1/3">
-                    <h3 class="text-2xl font-bold text-brand-primary">നിങ്ങൾ Investment ചെയ്യുക</h3>
-                    <p class="mt-2 text-gray-600">Outlet, Inventory & Assets എന്നിവയുടെ ഉടമസ്ഥാവകാശം</p>
+                    <h3 class="text-2xl font-bold text-brand-primary">You Invest</h3>
+                    <p class="mt-2 text-gray-600">Ownership of the Outlet, Inventory & Assets</p>
                 </div>
                 <div class="text-4xl font-bold text-brand-secondary mx-4">→</div>
                 <div class="bg-brand-light p-8 rounded-xl shadow-md w-full md:w-1/3">
-                    <h3 class="text-2xl font-bold text-brand-primary">ഞങ്ങൾ Operate ചെയ്യുന്നു</h3>
-                    <p class="mt-2 text-gray-600">Sales, Staff, Marketing & ERP എന്നിവയുടെ Centralized Management</p>
+                    <h3 class="text-2xl font-bold text-brand-primary">We Operate</h3>
+                    <p class="mt-2 text-gray-600">Centralized Management of Sales, Staff, Marketing & ERP</p>
                 </div>
                  <div class="text-4xl font-bold text-brand-secondary mx-4">→</div>
                  <div class="bg-brand-secondary p-8 rounded-xl shadow-md w-full md:w-1/3">
-                    <h3 class="text-2xl font-bold text-white">ഞങ്ങൾ വിജയം പങ്കുവെക്കുന്നു</h3>
-                    <p class="mt-2 text-white font-semibold">നിങ്ങളുടെ Net Profit-ന്റെ 70% വരെ നിങ്ങളുടെ Investor's Share</p>
+                    <h3 class="text-2xl font-bold text-white">We Share Success</h3>
+                    <p class="mt-2 text-white font-semibold">Investor's Share of Net Profit is up to 70%</p>
                 </div>
             </div>
         </section>
@@ -168,7 +232,7 @@
         <!-- Investment Models -->
         <section class="py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-brand-primary mb-4">നിങ്ങളുടെ Investment Path തിരഞ്ഞെടുക്കുക</h2>
+                <h2 class="text-4xl font-bold text-brand-primary mb-4">Choose Your Investment Path</h2>
                 <p class="text-lg text-gray-600 mb-12">നിങ്ങളുടെ Investment ലക്ഷ്യങ്ങൾക്കനുസരിച്ച് മൂന്ന് വ്യത്യസ്ത Franchisee Model-കൾ ഞങ്ങൾ നൽകുന്നു, ₹25 ലക്ഷം മുതൽ അവസരങ്ങൾ ലഭ്യമാണ്.</p>
             </div>
 
@@ -178,6 +242,8 @@
                     <div class="p-8">
                         <h3 class="text-3xl font-bold text-brand-primary">Essential Showroom</h3>
                         <p class="text-gray-600 mt-2">സബാൻ കുടുംബത്തിലേക്കുള്ള നിങ്ങളുടെ പ്രവേശനം, ഒരു കേന്ദ്രീകൃതവും കാര്യക്ഷമവുമായ Setup-ഓടെ.</p>
+                        <p class="text-sm text-gray-500 mt-2">Showroom Size: Min. 10,000 sqft</p>
+                        <p class="text-base font-semibold text-gray-700 mt-1">USP: Focused efficiency for high-potential smaller markets.</p>
                         <p class="text-5xl font-bold text-brand-primary mt-6">₹1.08 Cr</p>
                         <p class="font-semibold text-gray-700">Total Initial Investment</p>
                     </div>
@@ -197,6 +263,8 @@
                         <span class="bg-brand-secondary text-white text-sm font-bold px-3 py-1 rounded-full">Most Popular</span>
                         <h3 class="text-3xl font-bold mt-4">Signature Showroom</h3>
                         <p class="text-gray-300 mt-2">ഒരു സമഗ്രമായ Display-യും മെച്ചപ്പെട്ട ഉപഭോക്തൃ അനുഭവവും നൽകുന്നു.</p>
+                        <p class="text-sm text-gray-200 mt-2">Showroom Size: Min. 12,000 sqft</p>
+                        <p class="text-base font-semibold text-gray-200 mt-1">USP: Offers a broader range of decor and home furnishings for a complete home solution.</p>
                         <p class="text-5xl font-bold text-white mt-6">₹1.30 Cr</p>
                         <p class="font-semibold text-gray-300">Total Initial Investment</p>
                     </div>
@@ -214,7 +282,9 @@
                 <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col">
                     <div class="p-8">
                         <h3 class="text-3xl font-bold text-brand-primary">Experience Hub</h3>
-                        <p class="text-gray-600 mt-2">ഒരു പൂർണ്ണമായ ഭവന പരിഹാരത്തിനായി integrated interior design services.</p>
+                        <p class="text-gray-600 mt-2">A Complete Home Furniture & Decors with integrated interior design services.</p>
+                        <p class="text-sm text-gray-500 mt-2">Showroom Size: Approx. 14,000 sqft</p>
+                        <p class="text-base font-semibold text-gray-700 mt-1">USP: Offers full interior design services with dedicated modular kitchen, bedroom, and living room displays.</p>
                         <p class="text-5xl font-bold text-brand-primary mt-6">₹1.50 Cr</p>
                         <p class="font-semibold text-gray-700">Total Initial Investment</p>
                     </div>
@@ -228,26 +298,27 @@
                     </div>
                 </div>
             </div>
-             <p class="text-center mt-8 text-sm text-gray-500 max-w-4xl mx-auto">പ്രധാന ശ്രദ്ധിക്കുക: ആദ്യ 5 നിക്ഷേപകർക്ക് License Fee ₹8 ലക്ഷം ആണ് (മുകളിൽ ഉൾപ്പെടുത്തിയിരിക്കുന്നു); അതിനുശേഷം അത് ₹10 ലക്ഷം ആയിരിക്കും. ചെലവുകൾ ഏകദേശ കണക്കുകളാണ്, സ്ഥലത്തെയും ഷോറൂമിന്റെ വലുപ്പത്തെയും ആശ്രയിച്ച് വ്യത്യാസപ്പെടാം. നിങ്ങൾ തിരഞ്ഞെടുക്കുന്ന സ്ഥലത്തിനായി ഒരു വിശദമായ Breakdown നൽകുന്നതാണ്.</p>
+             <p class="text-center mt-8 text-sm text-gray-500 max-w-4xl mx-auto">Important Note: License Fee is ₹8 Lakhs for the first 5 investors. After the first 5 investors, the License Fee will be ₹20 Lakhs. Costs are estimates and may vary. A detailed breakdown will be provided for your chosen location.</p>
         </section>
 
         <!-- Why Choose Sabhan -->
         <section class="bg-white py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-brand-primary mb-12">സബാനോടൊപ്പമുള്ള നിങ്ങളുടെ Strategic Advantages</h2>
+                <h2 class="text-4xl font-bold text-brand-primary mb-12">Your Strategic Advantages with Sabhan</h2>
+                <p class="text-lg text-gray-600 mb-8">Sabhan Furniture’s unique value proposition integrates interior design services with large, experience-driven showrooms, backed by a 10-year legacy of trust. This allows us to capture a larger share of the customer's home furnishing budget, deliver higher value, and establish a significant competitive advantage in Kerala's evolving market.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 <div class="flex items-start space-x-4">
                     <div class="bg-brand-secondary text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center text-2xl font-bold">✓</div>
                     <div>
-                        <h3 class="text-xl font-bold text-gray-800">ഏറ്റവും സുരക്ഷിതമായ Investment Option</h3>
+                        <h3 class="text-xl font-bold text-gray-800">Safest Investment Option</h3>
                         <p class="text-gray-600 mt-1">നിങ്ങളുടെ പണത്തിന് വളരെ കുറഞ്ഞ Risk ഉള്ള ഒരു സുരക്ഷിത Model, കാരണം നിങ്ങൾ Inventory-യുടെയും Assets-ന്റെയും ഉടമയാണ്, വ്യക്തമായ Exit Strategy-യും ഉണ്ട്.</p>
                     </div>
                 </div>
                 <div class="flex items-start space-x-4">
                     <div class="bg-brand-secondary text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center text-2xl font-bold">✓</div>
                     <div>
-                        <h3 class="text-xl font-bold text-gray-800">തെളിയിക്കപ്പെട്ടതും വിജയകരവുമായ FOCO Model</h3>
+                        <h3 class="text-xl font-bold text-gray-800">Proven & Successful FOCO Model</h3>
                         <p class="text-gray-600 mt-1">ഞങ്ങൾ എല്ലാ പ്രവർത്തനങ്ങളും കൈകാര്യം ചെയ്യുന്നു, നിങ്ങൾ Net Profit-ന്റെ 70% വരെ എളുപ്പത്തിൽ നേടുന്നു.</p>
                     </div>
                 </div>
@@ -255,7 +326,7 @@
                     <div class="bg-brand-secondary text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center text-2xl font-bold">✓</div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-800">ശക്തമായ Brand Reputation</h3>
-                        <p class="text-gray-600 mt-1">ഒരു പതിറ്റാണ്ടിലേറെയായി കേരളത്തിൽ വിശ്വാസവും 100,000-ൽ അധികം സന്തുഷ്ടരായ ഉപഭോക്താക്കളുമുള്ള ഒരു പേരിന്റെ പ്രയോജനം ഉടൻ നേടുക.</p>
+                        <p class="text-gray-600 mt-1">ഒരു പതിറ്റാണ്ടിലേറെയായി കേരളത്തിൽ വിശ്വാസവും 100,000-ൽ അധികം സന്തുഷ്ടരായ ഉപഭോക്താക്കളുമുള്ള ഒരു ബ്രാൻഡിന്റെ പ്രയോജനം ഉടൻ നേടുക.</p>
                     </div>
                 </div>
                 <div class="flex items-start space-x-4">
@@ -284,24 +355,27 @@
 
         <!-- Call to Action -->
         <section class="bg-brand-primary py-20 px-4 text-center text-white">
-            <h2 class="text-4xl font-bold">വിജയം കെട്ടിപ്പടുക്കാൻ തയ്യാറാണോ?</h2>
+            <h2 class="text-4xl font-bold">Ready to Build Your Success?</h2>
             <p class="text-xl mt-4 text-gray-300 max-w-3xl mx-auto">അടുത്ത Steps എടുക്കുക. നിങ്ങളുടെ ലൊക്കേഷനുകൾക്കനുസരിച്ചുള്ള Projections ചർച്ച ചെയ്യാനും ഞങ്ങളുടെ FOCO Model നിങ്ങൾക്ക് എങ്ങനെ മികച്ച വരുമാനം നൽകുമെന്ന് explore ചെയ്യാനും ഒരു Personalized Meeting ഷെഡ്യൂൾ ചെയ്യുക.</p>
             <div class="mt-8">
-                <a href="tel:9072698111" class="bg-brand-secondary text-white font-bold py-4 px-8 rounded-lg text-xl inline-block hover:bg-yellow-500 transition-colors">Franchisee Manager-നെ ബന്ധപ്പെടുക: 9072698111</a>
-                <p class="mt-4 text-gray-400">അല്ലെങ്കിൽ <a href="mailto:info@sabhan.in?subject=Franchisee%20Inquiry" class="underline hover:text-white">info@sabhan.in</a> എന്ന Email-ലേക്ക് അയക്കുക (Subject Line: Franchisee)</p>
+                <a href="tel:9072698111" class="bg-brand-secondary text-white font-bold py-4 px-8 rounded-lg text-xl inline-block hover:bg-yellow-500 transition-colors mr-4">Contact Franchisee Manager: 9072698111</a>
+                <a href="https://wa.me/919072698111" target="_blank" class="bg-green-500 text-white font-bold py-4 px-8 rounded-lg text-xl inline-block hover:bg-green-600 transition-colors">WhatsApp Us</a>
+                <p class="mt-4 text-gray-400">Visit our website: <a href="https://www.sabhan.in" target="_blank" class="underline hover:text-white">www.sabhan.in</a></p>
+                <p class="mt-2 text-gray-400">Or email: <a href="mailto:info@sabhan.in?subject=Franchisee%20Inquiry" class="underline hover:text-white">info@sabhan.in</a> (Subject Line: Franchisee)</p>
             </div>
         </section>
 
         <!-- Social Media Poster -->
         <section class="py-16 px-4 md:px-8 bg-brand-light">
             <div class="text-center max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-brand-primary mb-8">നിങ്ങളുടെ താല്പര്യത്തിന് നന്ദി!</h2>
+                <h2 class="text-4xl font-bold text-brand-primary mb-8">Thank You for Your Interest!</h2>
                 <p class="text-lg text-gray-600 mb-12">നിങ്ങളുടെ സമയത്തിനും പരിഗണനയ്ക്കും ഞങ്ങൾ നന്ദി പറയുന്നു. നിങ്ങളുടെ സൗകര്യത്തിനായി ഒരു സംക്ഷിപ്ത വിവരവും ഞങ്ങളുടെ കോൺടാക്റ്റ് വിവരങ്ങളും ഇവിടെ നൽകുന്നു.</p>
                 <img src="https://i.postimg.cc/R0dXTgS2/Poster-franchisee-sm.png" alt="Social Media Franchisee Poster" class="w-full max-w-2xl mx-auto rounded-xl shadow-lg">
             </div>
         </section>
     </main>
 <script>
+// Utility function to wrap long labels for Chart.js
 function wrapLabels(label, maxLength) {
     if (label.length <= maxLength) {
         return label;
@@ -323,6 +397,7 @@ function wrapLabels(label, maxLength) {
     return lines;
 }
 
+// Mandatory Tooltip Configuration for all charts
 const tooltipConfig = {
     plugins: {
         tooltip: {
@@ -344,8 +419,10 @@ const tooltipConfig = {
     }
 };
 
+// Chart Colors
 const chartColors = ['#044222', '#2a623d', '#E1A931', '#f7c96f', '#6c757d', '#adb5bd'];
 
+// 1. Market Growth Chart
 const marketGrowthCtx = document.getElementById('marketGrowthChart').getContext('2d');
 new Chart(marketGrowthCtx, {
     type: 'line',
@@ -379,6 +456,7 @@ new Chart(marketGrowthCtx, {
     }
 });
 
+// 2. Organized Sector Chart
 const organizedSectorCtx = document.getElementById('organizedSectorChart').getContext('2d');
 new Chart(organizedSectorCtx, {
     type: 'doughnut',
@@ -409,6 +487,50 @@ new Chart(organizedSectorCtx, {
     }
 });
 
+// 3. Building Density Chart
+const buildingDensityCtx = document.getElementById('buildingDensityChart').getContext('2d');
+new Chart(buildingDensityCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Thiruvananthapuram', 'Malappuram', 'Kerala Average'],
+        datasets: [{
+            data: [34, 25, 16],
+            backgroundColor: ['#044222', '#2a623d', '#E1A931'],
+            borderColor: '#ffffff',
+            borderWidth: 2,
+            borderRadius: 4
+        }]
+    },
+    options: {
+        indexAxis: 'y', // Horizontal bar chart
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        return Array.isArray(label) ? label.join(' ') : label;
+                    },
+                    label: (context) => `${context.raw} buildings/sqkm`
+                }
+            },
+            legend: { display: false }
+        },
+        scales: {
+            x: {
+                beginAtZero: true,
+                ticks: {
+                    callback: (value) => `${value}`
+                }
+            }
+        }
+    }
+});
+
+
+// Investment Breakdown Data
 const essentialData = {
     labels: [wrapLabels('Initial Inventory', 16), wrapLabels('Showroom Setup Cost', 16), wrapLabels('Lease Advance', 16), wrapLabels('Working Capital Fund', 16), wrapLabels('Inauguration Expenses', 16), wrapLabels('License Fee', 16)],
     values: [4000000, 2750000, 1200000, 1000000, 1100000, 800000]
@@ -422,6 +544,7 @@ const experienceData = {
     values: [6000000, 2000000, 2900000, 1200000, 1000000, 1100000, 800000]
 };
 
+// 4. Essential Showroom Chart
 const essentialCtx = document.getElementById('essentialChart').getContext('2d');
 new Chart(essentialCtx, {
     type: 'doughnut',
@@ -437,6 +560,7 @@ new Chart(essentialCtx, {
     options: { ...tooltipConfig, maintainAspectRatio: false, cutout: '60%' }
 });
 
+// 5. Signature Showroom Chart
 const signatureCtx = document.getElementById('signatureChart').getContext('2d');
 new Chart(signatureCtx, {
     type: 'doughnut',
@@ -452,6 +576,7 @@ new Chart(signatureCtx, {
     options: { ...tooltipConfig, maintainAspectRatio: false, cutout: '60%' }
 });
 
+// 6. Experience Hub Chart
 const experienceCtx = document.getElementById('experienceChart').getContext('2d');
 new Chart(experienceCtx, {
     type: 'doughnut',
