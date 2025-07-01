@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ml"> <!-- Changed language to Malayalam -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,6 +51,26 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transform: translateY(-2px); /* Slight lift on active */
         }
+        /* New tab-button-small for Key Investor Benefits */
+        .tab-button-small {
+            background-color: #F0EFEA;
+            color: #044222;
+            border-color: #DCD9D0;
+            padding: 0.5rem 1rem; /* Smaller padding */
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            font-size: 0.875rem; /* Smaller font size (sm) */
+        }
+        .tab-button-small.active {
+            background-color: #044222;
+            color: #FFFFFF;
+            border-color: #044222;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
         /* Image fitting for showroom photos */
         .showroom-img {
             width: 100%;
@@ -89,11 +109,29 @@
                 <img src="https://i.postimg.cc/26hjyxLK/Sabhan-Logo-3.png" alt="Sabhan Furniture Logo" class="h-24 sm:h-28 md:h-32">
             </div>
             <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 text-brand-primary">Your Path to Profit: Sabhan Furniture Franchise</h1>
-            <p class="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto">കേരളത്തിലെ ഫർണിച്ചർ മാർക്കറ്റിലെ ഒരു പ്രമുഖ സ്ഥാപനവുമായി പങ്കാളിയാകൂ. വെറും <span class="font-bold text-brand-secondary">₹25 ലക്ഷം</span> മുതൽ മുടക്കി ആജീവനാന്ത വരുമാനം നേടൂ.</p>
-            <p class="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mt-2">കേരളത്തിലെ ഏറ്റവും വിശ്വസനീയമായ ഫർണിച്ചർ ഫ്രാഞ്ചൈസിയിൽ നിക്ഷേപിച്ച് ലാഭകരമായ ഒരു സംരംഭം ആരംഭിക്കൂ.</p>
+            <p class="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto">നിക്ഷേപത്തിനായി ഒരു സുരക്ഷിത വഴിയോ? കേരളത്തിലെ പ്രമുഖ ഫർണിച്ചർ ബ്രാൻഡിൽ ബിസിനസ് പങ്കാളിയാകൂ – തുടക്കം വെറും <span class="font-bold text-brand-secondary">₹25 ലക്ഷം</span> മുതൽ.</p>
             <div class="mt-8 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
                 <a href="#investment-models" class="bg-brand-primary text-white font-bold py-3 px-6 rounded-full text-lg hover:bg-green-800 transition shadow-lg w-full md:w-auto transform hover:scale-105">Explore Models</a>
                 <a href="#roi-calculator" class="bg-brand-secondary text-white font-bold py-3 px-6 rounded-full text-lg hover:bg-yellow-600 transition shadow-lg w-full md:w-auto transform hover:scale-105">Calculate Your ROI</a>
+            </div>
+        </section>
+
+        <!-- Key Investor Benefits Section -->
+        <section id="key-investor-benefits" class="py-10 px-4 md:px-8 bg-brand-light">
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold text-brand-primary mb-6 text-center">Key Investor Benefits</h2>
+                <div class="flex flex-wrap justify-center gap-4 mb-6" id="investorBenefitTabs">
+                    <button class="tab-button-small active" data-tab="roi">High ROI</button>
+                    <button class="tab-button-small" data-tab="profit-share">Profit Share</button>
+                    <button class="tab-button-small" data-tab="asset-ownership">Asset Ownership</button>
+                    <button class="tab-button-small" data-tab="exclusive-offer">Exclusive Offer</button>
+                </div>
+                <div id="investorBenefitContent" class="text-center text-gray-700 text-lg">
+                    <p id="roi-content" class="tab-content active">നിങ്ങളുടെ ഇൻവെസ്റ്റ്മെന്റിൽ <span class="font-bold text-brand-primary" id="dynamic-roi"></span> (ഫ്രാഞ്ചൈസി ടൈപ്പ്, ലൊക്കേഷൻ, ഇനിഷ്യൽ ഇൻവെസ്റ്റ്മെന്റ് എന്നിവ അനുസരിച്ച്).</p>
+                    <p id="profit-share-content" class="tab-content hidden"><span class="font-bold text-brand-primary">70% വരെ Profit Share</span> ഇൻവെസ്റ്റർക്ക്.</p>
+                    <p id="asset-ownership-content" class="tab-content hidden">ഇൻവെസ്റ്റർക്ക് ബ്രാഞ്ച്, ഇൻവെന്ററി, അസറ്റ്സ് എന്നിവയുടെ <span class="font-bold text-brand-primary">കംപ്ലീറ്റ് ഓണർഷിപ്പ്</span>.</p>
+                    <p id="exclusive-offer-content" class="tab-content hidden">ആദ്യത്തെ 5 ഫ്രാഞ്ചൈസികൾക്ക് <span class="font-bold text-brand-primary">സെലക്റ്റഡ് ലൊക്കേഷനുകളിൽ മാത്രം ലഭ്യമാണ്</span>.</p>
+                </div>
             </div>
         </section>
 
@@ -101,15 +139,15 @@
         <section class="py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto mb-12">
                 <h2 class="text-4xl font-bold text-brand-primary mb-4">The Market is Growing. Your Opportunity is Now.</h2>
-                <p class="text-lg text-gray-600 mb-6">ഇന്ത്യൻ ഫർണിച്ചർ മാർക്കറ്റ് അതിവേഗം വളരുകയാണ്, വിശ്വസനീയമായ, ഓർഗനൈസ്ഡ് ബ്രാൻഡുകളിലേക്ക് ഒരു മാറ്റം ദൃശ്യമാണ്. ശക്തമായ സമ്പദ്‌വ്യവസ്ഥയും വളരുന്ന റിയൽ എസ്റ്റേറ്റ് മേഖലയുമുള്ള കേരളം ഈ മാറ്റത്തിന് നേതൃത്വം നൽകുന്നു.</p>
-                <p class="text-xl text-gray-700 font-semibold">ഇന്ത്യയുടെ ഫർണിച്ചർ മാർക്കറ്റ് 2033 ഓടെ <span class="text-brand-secondary">6.40% മുതൽ 14%</span> CAGR-ൽ വളരുമെന്ന് പ്രവചിക്കപ്പെടുന്നു!</p>
+                <p class="text-lg text-gray-600 mb-6">ഇന്ത്യയുടെ ഫർണിച്ചർ മാർക്കറ്റ് ബൂം ചെയ്യുകയാണ്, ട്രസ്റ്റഡ്, ഓർഗനൈസ്ഡ് ബ്രാൻഡുകളിലേക്ക് ഷിഫ്റ്റ് ചെയ്തുകൊണ്ടിരിക്കുന്നു. സ്ട്രോങ്ങ് എക്കണോമിയും വളരുന്ന റിയൽ എസ്റ്റേറ്റുമുള്ള കേരളം ഈ ചേഞ്ചിന് ലീഡ് ചെയ്യുന്നു.</p>
+                <p class="text-xl text-gray-700 font-semibold">ഇന്ത്യയുടെ ഫർണിച്ചർ മാർക്കറ്റ് 2033 ഓടെ <span class="text-brand-secondary">6.40% to 14%</span> CAGR-ൽ വളരുമെന്ന് പ്രൊജക്റ്റ് ചെയ്യപ്പെടുന്നു!</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 <!-- Indian Market Growth -->
                 <div class="bg-white p-6 rounded-xl shadow-lg col-span-1 lg:col-span-2">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">India's Furniture Market Trajectory</h3>
-                    <p class="text-gray-600 mb-6">ദേശീയ മാർക്കറ്റ് വലിയ വളർച്ചയ്ക്ക് ഒരുങ്ങുകയാണ്, നിലവിലുള്ള ബിസിനസ്സുകൾക്ക് ഇത് നല്ല അവസരങ്ങൾ ഒരുക്കുന്നു.</p>
+                    <p class="text-gray-600 mb-6">നാഷണൽ മാർക്കറ്റ് സിഗ്നിഫിക്കന്റ് ഗ്രോത്തിന് സെറ്റ് ചെയ്തിട്ടുണ്ട്, ഇത് ഓർഗനൈസ്ഡ് ബിസിനസ്സുകൾക്ക് സ്ട്രോങ്ങ് ചാൻസസ് ക്രിയേറ്റ് ചെയ്യുന്നു.</p>
                     <div class="h-80 w-full"><canvas id="marketGrowthChart"></canvas></div>
                 </div>
 
@@ -117,7 +155,7 @@
                 <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col justify-center items-center">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">The Shift to Organized Retail</h3>
                     <div class="chart-container"><canvas id="organizedSectorChart"></canvas></div>
-                    <p class="text-center text-gray-600 mt-4">നിലവിൽ 10-21% ഉള്ള ഓർഗനൈസ്ഡ് സെക്ടർ, 2028 ഓടെ <span class="font-bold text-brand-primary">ഇരട്ടിയിലധികം</span> വളർച്ച നേടുമെന്ന് പ്രവചിക്കപ്പെടുന്നു, പ്രതിവർഷം 20% വളർച്ചയോടെ.</p>
+                    <p class="text-center text-gray-600 mt-4">ഓർഗനൈസ്ഡ് സെക്ടർ, നിലവിൽ 10-21%, 2028 ഓടെ അതിന്റെ ഷെയർ <span class="font-bold text-brand-primary">രണ്ടിരട്ടിയിലധികം</span> ആകുമെന്നും, പ്രതിവർഷം 20% വളരുമെന്നും പ്രൊജക്റ്റ് ചെയ്യപ്പെടുന്നു.</p>
                 </div>
             </div>
         </section>
@@ -126,29 +164,29 @@
         <section class="bg-white py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto mb-12">
                 <h2 class="text-4xl font-bold text-brand-primary mb-4">Kerala: A High-Growth Frontier for Furniture</h2>
-                <p class="text-lg text-gray-600">ശക്തമായ സമ്പദ്‌വ്യവസ്ഥയും വളരുന്ന റിയൽ എസ്റ്റേറ്റ് മേഖലയും കേരളത്തെ ഫർണിച്ചർ, ഇന്റീരിയർ ഡിസൈൻ ഇൻവെസ്റ്റ്മെന്റിന് ഏറ്റവും മികച്ച സ്ഥലമാക്കി മാറ്റുന്നു.</p>
+                <p class="text-lg text-gray-600">കേരളത്തിന്റെ സ്ട്രോങ്ങ് എക്കണോമിയും വളരുന്ന റിയൽ എസ്റ്റേറ്റ് മാർക്കറ്റും ഫർണിച്ചർ, ഇന്റീരിയർ ഡിസൈൻ ഇൻവെസ്റ്റ്മെന്റിന് ഒരു പ്രൈം ലൊക്കേഷനാക്കി മാറ്റുന്നു.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-center">
                 <div class="bg-brand-light p-6 rounded-xl shadow-md">
                     <p class="text-5xl font-bold text-brand-secondary">6.5%</p>
-                    <p class="text-gray-700 mt-2">ജിഎസ്ഡിപി വളർച്ച (2023-24)</p>
+                    <p class="text-gray-700 mt-2">GSDP Growth (2023-24)</p>
                 </div>
                 <div class="bg-brand-light p-6 rounded-xl shadow-md">
                     <p class="text-5xl font-bold text-brand-secondary">₹1,76,072</p>
-                    <p class="text-gray-700 mt-2">പ്രതിശീർഷ ജിഎസ്ഡിപി (ദേശീയ ശരാശരിയേക്കാൾ കൂടുതൽ)</p>
+                    <p class="text-gray-700 mt-2">Per Capita GSDP (Above National Average)</p>
                 </div>
                 <div class="bg-brand-light p-6 rounded-xl shadow-md">
                     <p class="text-5xl font-bold text-brand-secondary">11.13%</p>
-                    <p class="text-gray-700 mt-2">പുതിയ കെട്ടിടങ്ങളുടെ വാർഷിക വളർച്ച</p>
+                    <p class="text-gray-700 mt-2">Annual Growth in New Buildings</p>
                 </div>
                 <div class="bg-brand-light p-6 rounded-xl shadow-md">
                     <p class="text-5xl font-bold text-brand-secondary">3/4 BHK</p>
-                    <p class="text-gray-700 mt-2">നിരവധി ലക്ഷ്വറി അപ്പാർട്ട്മെന്റ് രജിസ്ട്രേഷനുകൾ</p>
+                    <p class="text-gray-700 mt-2">Many Luxury Apartment Registrations</p>
                 </div>
             </div>
             <div class="max-w-4xl mx-auto mt-12 bg-white p-6 rounded-xl shadow-lg">
                 <h3 class="text-2xl font-bold text-gray-800 mb-4">New Building Density in Top Kerala Districts</h3>
-                <p class="text-gray-600 mb-6">കേരളത്തിൽ കഴിഞ്ഞ 8 വർഷത്തിനിടെ ഏറ്റവും കൂടുതൽ കെട്ടിട നിർമ്മാണ വളർച്ച രേഖപ്പെടുത്തി, ഇത് ശക്തമായ നിർമ്മാണ പ്രവർത്തനങ്ങളെ സൂചിപ്പിക്കുന്നു.</p>
+                <p class="text-gray-600 mb-6">കേരളം കഴിഞ്ഞ 8 വർഷത്തിനിടയിൽ ഏറ്റവും കൂടുതൽ ബിൽഡിംഗ് ഗ്രോത്ത് കണ്ടിട്ടുണ്ട്, ഇത് സ്ട്രോങ്ങ് കൺസ്ട്രക്ഷൻ ആക്ടിവിറ്റിയെ സൂചിപ്പിക്കുന്നു.</p>
                 <div class="h-64 w-full"><canvas id="buildingDensityChart"></canvas></div>
             </div>
         </section>
@@ -157,42 +195,42 @@
         <section class="py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto mb-12">
                 <h2 class="text-4xl font-bold text-brand-primary mb-4">Understanding the Modern Kerala Consumer</h2>
-                <p class="text-lg text-gray-600">കേരളത്തിലെ കസ്റ്റമേഴ്സ് ക്വാളിറ്റിയുള്ളതും കസ്റ്റമൈസ്ഡ് ആയതുമായ ഓപ്ഷനുകളും, അവരുടെ മാറിക്കൊണ്ടിരിക്കുന്ന ജീവിതശൈലിക്ക് അനുയോജ്യമായ പൂർണ്ണമായ ഹോം സൊല്യൂഷനുകളും തേടുന്നു.</p>
+                <p class="text-lg text-gray-600">കേരളത്തിലെ ഡിസേണിംഗ് കസ്റ്റമേഴ്സ് ക്വാളിറ്റി, കസ്റ്റമൈസ്ഡ് ഓപ്ഷൻസ്, കംപ്ലീറ്റ് ഹോം സൊല്യൂഷൻസ് എന്നിവയാണ് സീക്ക് ചെയ്യുന്നത്, ഇത് അവരുടെ എവോൾവിംഗ് ലൈഫ്സ്റ്റൈൽ റിഫ്ലക്റ്റ് ചെയ്യുന്നു.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
                     <div class="bg-brand-secondary text-white rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center text-xl font-bold">★</div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-800">Modern & Unique Designs</h3>
-                        <p class="text-gray-600 mt-1">പഴയ, വലിയ ഫർണിച്ചറുകളേക്കാൾ ആധുനികവും ലളിതവുമായ ഡിസൈനുകൾക്കാണ് അവർ മുൻഗണന നൽകുന്നത്.</p>
+                        <p class="text-gray-600 mt-1">ബൾക്കി, ട്രഡീഷണൽ പീസുകളേക്കാൾ കണ്ടംപററി, മിനിമലിസ്റ്റ് ഡിസൈനുകൾക്ക് പ്രിഫറൻസ്.</p>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
                     <div class="bg-brand-secondary text-white rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center text-xl font-bold">💡</div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-800">Quality, Lasting, & Eco-Friendly</h3>
-                        <p class="text-gray-600 mt-1">പരിസ്ഥിതി സൗഹൃദ വസ്തുക്കളും ഈടുനിൽക്കുന്ന ഉൽപ്പന്നങ്ങളും അവർ തിരഞ്ഞെടുക്കുന്നു.</p>
+                        <p class="text-gray-600 mt-1">ഡ്യൂറബിൾ, സസ്റ്റൈനബിൾ മെറ്റീരിയൽസിനും ലോംഗ് ലാസ്റ്റിംഗ് പ്രോഡക്ട്സിനും സ്ട്രോങ്ങ് ഡിമാൻഡ്.</p>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
                     <div class="bg-brand-secondary text-white rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center text-xl font-bold">✂</div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-800">Custom & Personal Options</h3>
-                        <p class="text-gray-600 mt-1">അവരുടെ സ്റ്റൈലിനും ചെറിയ നഗരങ്ങളിലെ സ്ഥലങ്ങൾക്കും അനുയോജ്യമായ കസ്റ്റം ഫർണിച്ചറുകൾക്ക് വലിയ ഡിമാൻഡുണ്ട്.</p>
+                        <p class="text-gray-600 mt-1">പേഴ്സണൽ സ്റ്റൈലിനും എവോൾവിംഗ് അർബൻ സ്പേസുകൾക്കും ഫിറ്റ് ആകുന്ന ടെയിലർഡ് ഫർണിച്ചർ സൊല്യൂഷൻസിന് ഹൈ ഡിമാൻഡ്.</p>
                     </div>
                 </div>
                  <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
                     <div class="bg-brand-secondary text-white rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center text-xl font-bold">🗂️</div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-800">Modular Solutions</h3>
-                        <p class="text-gray-600 mt-1">സ്ഥലം ലാഭിക്കുന്നതും കസ്റ്റമൈസ് ചെയ്യാവുന്നതും പ്രായോഗികവുമായ മോഡുലാർ ഫർണിച്ചറുകൾക്ക്, പ്രത്യേകിച്ച് കിച്ചണുകൾക്ക്, വലിയ പ്രാധാന്യം നൽകുന്നു.</p>
+                        <p class="text-gray-600 mt-1">പ്രത്യേകിച്ച് കിച്ചണുകൾക്കായി, സ്പേസ്-എഫിഷ്യന്റ്, കസ്റ്റമൈസബിൾ, പ്രാക്ടിക്കൽ മോഡുലാർ ഫർണിച്ചറുകൾക്ക് വാല്യൂ നൽകുന്നു.</p>
                     </div>
                 </div>
                  <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
                     <div class="bg-brand-secondary text-white rounded-full h-10 w-10 flex-shrink-0 flex items-center justify-center text-xl font-bold">🔄</div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-800">Willingness to Upgrade</h3>
-                        <p class="text-gray-600 mt-1">ഉപഭോക്താക്കൾ അവരുടെ ലിവിംഗ് സ്പേസുകൾ നവീകരിക്കുന്നതിൽ സജീവമായി നിക്ഷേപിക്കുന്നു, ഇത് ക്വാളിറ്റിയുള്ള അപ്‌ഡേറ്റുകൾക്ക് ഡിമാൻഡ് വർദ്ധിപ്പിക്കുന്നു.</p>
+                        <p class="text-gray-600 mt-1">കൺസ്യൂമേഴ്സ് അവരുടെ ലിവിംഗ് സ്പേസുകൾ റീഇമാജിൻ ചെയ്യുന്നതിനായി ആക്ടീവായി ഇൻവെസ്റ്റ് ചെയ്യുന്നു, ഇത് ക്വാളിറ്റി അപ്ഡേറ്റുകൾക്കുള്ള ഡിമാൻഡ് ഡ്രൈവ് ചെയ്യുന്നു.</p>
                     </div>
                 </div>
             </div>
@@ -202,13 +240,13 @@
         <section class="py-16 px-4 md:px-8 bg-brand-light">
             <div class="text-center max-w-4xl mx-auto mb-12">
                 <h2 class="text-4xl font-bold text-brand-primary mb-4">Our Strong Roots in Kerala</h2>
-                <p class="text-lg text-gray-600">സബാൻ ഫർണിച്ചർ തന്ത്രപ്രധാനമായ സ്ഥലങ്ങളിൽ ഷോറൂമുകൾ സ്ഥാപിച്ച് ശക്തമായ സാന്നിധ്യം ഉറപ്പിച്ചു, ഇത് ഞങ്ങളുടെ ആഴത്തിലുള്ള മാർക്കറ്റ് അറിവും മികച്ച ഓപ്പറേഷൻസും വ്യക്തമാക്കുന്നു.</p>
+                <p class="text-lg text-gray-600">സബാൻ ഫർണിച്ചർ സ്ട്രാറ്റജിക്കലി ലൊക്കേറ്റ് ചെയ്ത ഷോറൂമുകളിലൂടെ ഒരു ഫോർമിഡബിൾ പ്രസൻസ് ബിൽഡ് ചെയ്തിട്ടുണ്ട്, ഇത് ഞങ്ങളുടെ ഡീപ് മാർക്കറ്റ് അണ്ടർസ്റ്റാൻഡിംഗും ഓപ്പറേഷണൽ എക്സലൻസും റിഫ്ലക്റ്റ് ചെയ്യുന്നു.</p>
             </div>
 
             <!-- New Directors Section -->
             <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg mb-12">
                 <h3 class="text-3xl font-bold text-brand-primary mb-4 text-center">Visionary Leadership</h3>
-                <p class="text-lg text-gray-700 mb-6 text-center">സബാൻ ഫർണിച്ചറിന്റെ യാത്ര 2014-ൽ പാണ്ടിക്കാട് ഞങ്ങളുടെ ആദ്യത്തെ വലിയ ഷോറൂം തുറന്നുകൊണ്ട് ഞങ്ങളുടെ ദീർഘവീക്ഷണമുള്ള ഡയറക്ടർമാർ ആരംഭിച്ചു. അവരുടെ സജീവമായ പങ്കാളിത്തം ഞങ്ങളുടെ മികവും മാർക്കറ്റ് ലീഡർഷിപ്പും ഉറപ്പാക്കുന്നു.</p>
+                <p class="text-lg text-gray-700 mb-6 text-center">സബാൻ ഫർണിച്ചറിന്റെ ജേർണി ആരംഭിച്ചത് ഞങ്ങളുടെ വിഷനറി ഡയറക്ടർമാരോടുകൂടിയാണ്, അവർ 2014-ൽ പാണ്ടിക്കാട് ഞങ്ങളുടെ ഫസ്റ്റ് മേജർ ഷോറൂം ഓപ്പൺ ചെയ്തു. അവരുടെ ആക്ടീവ് ഇൻവോൾവ്മെന്റ് ഞങ്ങളുടെ കണ്ടിന്യൂഡ് എക്സലൻസും മാർക്കറ്റ് ലീഡർഷിപ്പും എൻഷ്യൂർ ചെയ്യുന്നു.</p>
                 <img src="https://i.postimg.cc/9MLPF2jf/Directors-images.jpg" alt="Sabhan Furniture Directors" class="w-full h-auto rounded-lg shadow-md mx-auto object-cover">
             </div>
             
@@ -216,15 +254,15 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                     <img src="https://i.postimg.cc/W1tGQRgw/Kondotty-Showroom.jpg" alt="Kondotty Showroom" class="showroom-img rounded-t-xl">
-                    <p class="p-4 text-center text-xl font-semibold text-gray-800">കൊണ്ടോട്ടി ഷോറൂം</p>
+                    <p class="p-4 text-center text-xl font-semibold text-gray-800">Kondotty Showroom</p>
                 </div>
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                     <img src="https://i.postimg.cc/DZR3fp3t/Omassery-Showroom.jpg" alt="Omassery Showroom" class="showroom-img rounded-t-xl">
-                    <p class="p-4 text-center text-xl font-semibold text-gray-800">ഓമശ്ശേരി ഷോറൂം</p>
+                    <p class="p-4 text-center text-xl font-semibold text-gray-800">Omassery Showroom</p>
                 </div>
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                     <img src="https://i.postimg.cc/fb2hpT2W/Pandikkad-Showroom.jpg" alt="Pandikkad Showroom" class="showroom-img rounded-t-xl">
-                    <p class="p-4 text-center text-xl font-semibold text-gray-800">പാണ്ടിക്കാട് ഷോറൂം</p>
+                    <p class="p-4 text-center text-xl font-semibold text-gray-800">Pandikkad Showroom</p>
                 </div>
             </div>
         </section>
@@ -233,7 +271,7 @@
          <section class="py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto mb-12">
                 <h2 class="text-4xl font-bold text-brand-primary mb-4">Your Trusted Partner: Sabhan Furniture</h2>
-                <p class="text-lg text-gray-600">ഒരു ദശാബ്ദക്കാലത്തെ ട്രസ്റ്റും വ്യക്തമായ ഭാവി തന്ത്രങ്ങളുമായി, കേരളത്തിലെ ഓർഗനൈസ്ഡ് ഫർണിച്ചർ റീട്ടെയിൽ മേഖലയിൽ നേതൃത്വം നൽകാൻ സബാൻ ഫർണിച്ചർ ഒരുങ്ങുന്നു.</p>
+                <p class="text-lg text-gray-600">ഒരു ഡെക്കേഡ് ഓഫ് ട്രസ്റ്റും ഒരു ക്ലിയർ ഫ്യൂച്ചർ സ്ട്രാറ്റജിയുമായി, കേരളത്തിലെ ഓർഗനൈസ്ഡ് ഫർണിച്ചർ റീട്ടെയിൽ സെക്ടറിന് ലീഡ് ചെയ്യാൻ സബാൻ ഫർണിച്ചർ പോയിസ്ഡ് ആണ്.</p>
             </div>
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -242,19 +280,19 @@
                 <div class="grid grid-cols-2 gap-6 text-center">
                     <div class="bg-white p-6 rounded-xl shadow-lg">
                         <p class="text-5xl font-bold text-brand-secondary">10+</p>
-                        <p class="text-gray-700 mt-2 font-semibold">വർഷത്തെ ലെഗസി</p>
+                        <p class="text-gray-700 mt-2 font-semibold">Years of Legacy</p>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-lg">
                         <p class="text-5xl font-bold text-brand-secondary">100K+</p>
-                        <p class="text-gray-700 mt-2 font-semibold">സന്തുഷ്ടരായ കസ്റ്റമേഴ്സ്</p>
+                        <p class="text-gray-700 mt-2 font-semibold">Happy Customers</p>
                     </div>
                      <div class="bg-white p-6 rounded-xl shadow-lg">
                         <p class="text-5xl font-bold text-brand-secondary">10</p>
-                        <p class="text-gray-700 mt-2 font-semibold">ബ്രാഞ്ചുകൾ 2030 ഓടെ</p>
+                        <p class="text-gray-700 mt-2 font-semibold">Branches by 2030</p>
                     </div>
                      <div class="bg-white p-6 rounded-xl shadow-lg">
                         <p class="text-5xl font-bold text-brand-secondary">₹100Cr</p>
-                        <p class="text-gray-700 mt-2 font-semibold">റെവന്യൂ ടാർഗറ്റ് 2030 ഓടെ</p>
+                        <p class="text-gray-700 mt-2 font-semibold">Revenue Target by 2030</p>
                     </div>
                 </div>
             </div>
@@ -264,24 +302,24 @@
         <section class="bg-white py-16 px-4 md:px-8 rounded-xl shadow-xl mx-4 md:mx-auto max-w-7xl">
             <div class="text-center max-w-4xl mx-auto mb-12">
                 <h2 class="text-4xl font-bold text-brand-primary mb-4">Our Winning Partnership: The FOCO Model</h2>
-                <p class="text-lg text-gray-600">ഫ്രാഞ്ചൈസി ഓൺഡ്, കമ്പനി ഓപ്പറേറ്റഡ് (FOCO) മോഡൽ നിങ്ങളുടെ വിജയത്തിനായി സുരക്ഷിതവും ലാഭകരവുമായ ഒരു പങ്കാളിത്തം വാഗ്ദാനം ചെയ്യുന്നു. നിങ്ങൾ അസറ്റുകൾ സ്വന്തമാക്കുന്നു, ഞങ്ങൾ ഓപ്പറേഷൻസ് കൈകാര്യം ചെയ്യുന്നു, ഞങ്ങൾ ലാഭം പങ്കിടുന്നു.</p>
+                <p class="text-lg text-gray-600">ഫ്രാഞ്ചൈസി ഓൺഡ്, കമ്പനി ഓപ്പറേറ്റഡ് (FOCO) മോഡൽ ഒരു സെക്യൂർ ആൻഡ് പ്രോഫിറ്റബിൾ പാർട്ണർഷിപ്പ് ഓഫർ ചെയ്യുന്നു. നിങ്ങൾ അസറ്റ്സ് ഓൺ ചെയ്യുന്നു, ഞങ്ങൾ ഓപ്പറേഷൻസ് മാനേജ് ചെയ്യുന്നു, വിജയം നമ്മൾ ചേർന്ന് പങ്കുവെക്കുന്നു.</p>
             </div>
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-center max-w-4xl mx-auto">
                 <div class="bg-brand-light p-8 rounded-xl shadow-md w-full md:w-1/3">
-                    <h3 class="text-2xl font-bold text-brand-primary">നിങ്ങൾ ഇൻവെസ്റ്റ് ചെയ്യുന്നു</h3>
-                    <p class="mt-2 text-gray-600">ഔട്ട്‌ലെറ്റ്, ഇൻവെന്ററി & അസറ്റുകൾ സ്വന്തമാക്കുക</p>
+                    <h3 class="text-2xl font-bold text-brand-primary">You Invest</h3>
+                    <p class="mt-2 text-gray-600">ഔട്ട്ലെറ്റ്, ഇൻവെന്ററി & അസറ്റ്സ് ഓൺ ചെയ്യുക</p>
                 </div>
                 <div class="text-4xl font-bold text-brand-secondary mx-4 hidden md:block">→</div>
                 <div class="text-4xl font-bold text-brand-secondary my-4 block md:hidden">↓</div>
                 <div class="bg-brand-light p-8 rounded-xl shadow-md w-full md:w-1/3">
-                    <h3 class="text-2xl font-bold text-brand-primary">ഞങ്ങൾ ഓപ്പറേറ്റ് ചെയ്യുന്നു</h3>
-                    <p class="mt-2 text-gray-600">സെയിൽസ്, സ്റ്റാഫ്, മാർക്കറ്റിംഗ് & ഇആർപി എന്നിവയുടെ സെൻട്രൽ മാനേജ്മെന്റ്</p>
+                    <h3 class="text-2xl font-bold text-brand-primary">We Operate</h3>
+                    <p class="mt-2 text-gray-600">സെയിൽസ്, സ്റ്റാഫ്, മാർക്കറ്റിംഗ് & ERP എന്നിവയ്ക്കുള്ള സെൻട്രൽ മാനേജ്മെന്റ്</p>
                 </div>
                  <div class="text-4xl font-bold text-brand-secondary mx-4 hidden md:block">→</div>
                  <div class="text-4xl font-bold text-brand-secondary my-4 block md:hidden">↓</div>
                  <div class="bg-brand-secondary p-8 rounded-xl shadow-md w-full md:w-1/3">
-                    <h3 class="text-2xl font-bold text-white">ഞങ്ങൾ വിജയം പങ്കിടുന്നു</h3>
-                    <p class="mt-2 text-white font-semibold">നിങ്ങളുടെ നെറ്റ് പ്രോഫിറ്റ് ഷെയർ: 70% വരെ</p>
+                    <h3 class="text-2xl font-bold text-white">We Share Success</h3>
+                    <p class="mt-2 text-white font-semibold">നിങ്ങളുടെ നെറ്റ് പ്രോഫിറ്റിന്റെ ഷെയർ: 70% വരെ</p>
                 </div>
             </div>
         </section>
@@ -290,7 +328,7 @@
         <section id="investment-models" class="py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto mb-12">
                 <h2 class="text-4xl font-bold text-brand-primary mb-4">Choose Your Investment Path</h2>
-                <p class="text-lg text-gray-600">നിങ്ങളുടെ ഇൻവെസ്റ്റ്മെന്റ് ലക്ഷ്യങ്ങൾക്ക് അനുയോജ്യമായ മൂന്ന് വ്യത്യസ്ത ഫ്രാഞ്ചൈസി മോഡലുകൾ ഞങ്ങൾ വാഗ്ദാനം ചെയ്യുന്നു, വെറും ₹1.11 കോടി മുതൽ അവസരങ്ങൾ ആരംഭിക്കുന്നു.</p>
+                <p class="text-lg text-gray-600">നിങ്ങളുടെ ഇൻവെസ്റ്റ്മെന്റ് ഗോൾസുമായി അലൈൻ ചെയ്യാൻ ഡിസൈൻ ചെയ്ത മൂന്ന് ഡിസ്റ്റിങ്ക്റ്റ് ഫ്രാഞ്ചൈസി മോഡലുകൾ ഞങ്ങൾ ഓഫർ ചെയ്യുന്നു, വെറും ₹1.11 കോടി മുതൽ ഓപ്പർച്യൂണിറ്റീസ് ലഭ്യമാണ്.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -298,11 +336,11 @@
                 <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300">
                     <div class="p-8">
                         <h3 class="text-3xl font-bold text-brand-primary">Essential Showroom</h3>
-                        <p class="text-gray-600 mt-2">സബാൻ കുടുംബത്തിലേക്കുള്ള നിങ്ങളുടെ പ്രവേശനം, കാര്യക്ഷമമായ ഒരു സെറ്റപ്പോടെ.</p>
-                        <p class="text-sm text-gray-500 mt-2">ഷോറൂം സൈസ്: മിനിമം 10,000 sqft</p>
-                        <p class="text-base font-semibold text-gray-700 mt-1">USP: ഉയർന്ന സാധ്യതയുള്ള ചെറിയ മാർക്കറ്റുകൾക്ക് വേണ്ടിയുള്ള കാര്യക്ഷമമായ ഫോക്കസ്.</p>
+                        <p class="text-gray-600 mt-2">ഒരു ഫോക്കസ്ഡ്, എഫിഷ്യന്റ് സെറ്റപ്പിലൂടെ സബാൻ ഫാമിലിയിലേക്കുള്ള നിങ്ങളുടെ എൻട്രി.</p>
+                        <p class="text-sm text-gray-500 mt-2">Showroom Size: Min. 10,000 sqft</p>
+                        <p class="text-base font-semibold text-gray-700 mt-1">USP: ഹൈ-പൊട്ടൻഷ്യൽ സ്മോളർ മാർക്കറ്റുകൾക്കായി ഫോക്കസ്ഡ് എഫിഷ്യൻസി.</p>
                         <p class="text-5xl font-bold text-brand-primary mt-6">₹1.11 Cr</p>
-                        <p class="font-semibold text-gray-700">ആകെ പ്രാരംഭ ഇൻവെസ്റ്റ്മെന്റ്</p>
+                        <p class="font-semibold text-gray-700">Total Initial Investment</p>
                     </div>
                     <div class="p-8 bg-brand-light flex-grow">
                         <h4 class="text-xl font-bold text-center text-gray-800 mb-4">Investment Breakdown</h4>
@@ -311,7 +349,7 @@
                         </div>
                         <div class="text-center mt-6">
                             <p class="text-3xl font-bold text-brand-secondary">10%+ ROI</p>
-                            <p class="text-gray-600">പ്രവചിക്കപ്പെട്ട വാർഷിക വരുമാനം</p>
+                            <p class="text-gray-600">Projected Annual Return</p>
                         </div>
                     </div>
                 </div>
@@ -319,13 +357,13 @@
                 <!-- Signature Showroom -->
                 <div class="bg-brand-primary rounded-2xl shadow-2xl overflow-hidden flex flex-col transform md:scale-105 transition-all duration-300">
                     <div class="p-8 text-white">
-                        <span class="bg-brand-secondary text-white text-sm font-bold px-3 py-1 rounded-full">ഏറ്റവും പ്രചാരമുള്ളത്</span>
+                        <span class="bg-brand-secondary text-white text-sm font-bold px-3 py-1 rounded-full">Most Popular</span>
                         <h3 class="text-3xl font-bold mt-4">Signature Showroom</h3>
-                        <p class="text-gray-300 mt-2">മെച്ചപ്പെട്ട കസ്റ്റമർ എക്സ്പീരിയൻസിനായുള്ള ഒരു സമഗ്രമായ ഡിസ്പ്ലേ.</p>
-                        <p class="text-sm text-gray-200 mt-2">ഷോറൂം സൈസ്: മിനിമം 12,000 sqft</p>
-                        <p class="text-base font-semibold text-gray-200 mt-1">USP: പൂർണ്ണമായ ഹോം സൊല്യൂഷനുകൾക്കായി വിപുലമായ ഡെക്കർ, ഹോം ഫർണിഷിംഗ് ഉൽപ്പന്നങ്ങൾ വാഗ്ദാനം ചെയ്യുന്നു.</p>
+                        <p class="text-gray-300 mt-2">ഒരു എൻഹാൻസ്ഡ് കസ്റ്റമർ എക്സ്പീരിയൻസിനായുള്ള ഒരു കോംപ്രിഹെൻസീവ് ഡിസ്പ്ലേ.</p>
+                        <p class="text-sm text-gray-200 mt-2">Showroom Size: Min. 12,000 sqft</p>
+                        <p class="text-base font-semibold text-gray-200 mt-1">USP: ഒരു കംപ്ലീറ്റ് ഹോം സൊല്യൂഷനായി ഡെക്കോർ ആൻഡ് ഹോം ഫർണിഷിംഗ്സിന്റെ ഒരു ബ്രോഡർ റേഞ്ച് ഓഫർ ചെയ്യുന്നു.</p>
                         <p class="text-5xl font-bold text-white mt-6">₹1.32 Cr</p>
-                        <p class="font-semibold text-gray-300">ആകെ പ്രാരംഭ ഇൻവെസ്റ്റ്മെന്റ്</p>
+                        <p class="font-semibold text-gray-300">Total Initial Investment</p>
                     </div>
                     <div class="p-8 bg-white flex-grow">
                         <h4 class="text-xl font-bold text-center text-gray-800 mb-4">Investment Breakdown</h4>
@@ -334,7 +372,7 @@
                         </div>
                         <div class="text-center mt-6">
                             <p class="text-3xl font-bold text-brand-secondary">12%+ ROI</p>
-                            <p class="text-gray-600">പ്രവചിക്കപ്പെട്ട വാർഷിക വരുമാനം</p>
+                            <p class="text-gray-600">Projected Annual Return</p>
                         </div>
                     </div>
                 </div>
@@ -343,12 +381,12 @@
                 <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300">
                     <div class="p-8">
                         <h3 class="text-3xl font-bold text-brand-primary">Experience Hub</h3>
-                        <p class="text-gray-600 mt-2">പൂർണ്ണമായ ഹോം സൊല്യൂഷനുകൾക്കായി ഇന്റഗ്രേറ്റഡ് ഇന്റീരിയർ ഡിസൈൻ സർവീസുകൾ.</p>
-                        <p class="text-sm text-gray-500 mt-2">ഷോറൂം സൈസ്: ഏകദേശം 14,000 sqft</p>
-                        <p class="text-base font-semibold text-gray-700 mt-1">USP: മോഡുലാർ കിച്ചൺ, ബെഡ്‌റൂം, ലിവിംഗ് റൂം ഡിസ്പ്ലേകളോടൊപ്പം പൂർണ്ണമായ ഇന്റീരിയർ ഡിസൈൻ സർവീസുകൾ വാഗ്ദാനം ചെയ്യുന്നു.</p>
+                        <p class="text-gray-600 mt-2">ഒരു കംപ്ലീറ്റ് ഹോം സൊല്യൂഷനായി ഇന്റഗ്രേറ്റഡ് ഇന്റീരിയർ ഡിസൈൻ സർവീസസ്.</p>
+                        <p class="text-sm text-gray-500 mt-2">Showroom Size: Approx. 14,000 sqft</p>
+                        <p class="text-base font-semibold text-gray-700 mt-1">USP: ഡെഡിക്കേറ്റഡ് മോഡുലാർ കിച്ചൺ, ബെഡ്റൂം, ലിവിംഗ് റൂം ഡിസ്പ്ലേകളോടുകൂടിയ ഫുൾ ഇന്റീരിയർ ഡിസൈൻ സർവീസസ് ഓഫർ ചെയ്യുന്നു.</p>
                         <p class="text-5xl font-bold text-brand-primary mt-6">₹1.52 Cr</p>
-                        <p class="font-semibold text-gray-700">ആകെ പ്രാരംഭ ഇൻവെസ്റ്റ്മെന്റ്</p>
-                        </div>
+                        <p class="font-semibold text-gray-700">Total Initial Investment</p>
+                    </div>
                     <div class="p-8 bg-brand-light flex-grow">
                         <h4 class="text-xl font-bold text-center text-gray-800 mb-4">Investment Breakdown</h4>
                         <div class="chart-container" id="experienceChartContainer">
@@ -356,31 +394,31 @@
                         </div>
                         <div class="text-center mt-6">
                             <p class="text-3xl font-bold text-brand-secondary">14%+ ROI</p>
-                            <p class="text-gray-600">പ്രവചിക്കപ്പെട്ട വാർഷിക വരുമാനം</p>
+                            <p class="text-gray-600">Projected Annual Return</p>
                         </div>
                     </div>
                 </div>
             </div>
-             <p class="text-center mt-8 text-sm text-gray-500 max-w-4xl mx-auto">പ്രധാന അറിയിപ്പ്: ആദ്യത്തെ 5 നിക്ഷേപകർക്ക് ലൈസൻസ് ഫീ ₹8 ലക്ഷം ആയിരിക്കും. അതിനുശേഷം ലൈസൻസ് ഫീ ₹20 ലക്ഷം ആയിരിക്കും. ചെലവുകൾ ഏകദേശ കണക്കുകളാണ്, നിങ്ങളുടെ തിരഞ്ഞെടുത്ത സ്ഥലത്തെ ആശ്രയിച്ച് വ്യത്യാസപ്പെടാം.</p>
+             <p class="text-center mt-8 text-sm text-gray-500 max-w-4xl mx-auto">Important Note: License Fee is ₹8 Lakhs for the first 5 investors. After the first 5 investors, the License Fee will be ₹20 Lakhs. Costs are estimates and may vary based on your chosen location.</p>
         </section>
 
         <!-- ROI Calculator - Common for all models -->
         <section id="roi-calculator" class="py-16 px-4 md:px-8 bg-brand-light rounded-xl shadow-xl mx-4 md:mx-auto max-w-7xl">
             <div class="text-center max-w-4xl mx-auto mb-12">
                 <h2 class="text-4xl font-bold text-brand-primary mb-4">Project Your ROI: What If Scenarios</h2>
-                <p class="text-lg text-gray-600">പ്രവചിക്കപ്പെട്ട ബ്രേക്ക്-ഈവൻ സമയം കാണുന്നതിന് താഴെ ഒരു മോഡലും സെയിൽസ് സാഹചര്യവും തിരഞ്ഞെടുക്കുക. എല്ലാ പ്രൊജക്ഷൻസും ഇന്ത്യൻ അക്കൗണ്ടിംഗ് സ്റ്റാൻഡേർഡുകൾ അനുസരിച്ചുള്ള ഓപ്പറേഷണൽ എക്സ്പെൻസുകളെ അടിസ്ഥാനമാക്കിയുള്ളതാണ്.</p>
+                <p class="text-lg text-gray-600">പ്രൊജക്റ്റ് ചെയ്ത ബ്രേക്ക്-ഈവൻ ടൈം കാണുന്നതിന് ഒരു മോഡലും ഒരു സെയിൽസ് സിനാരിയോയും സെലക്ട് ചെയ്യുക. എല്ലാ പ്രൊജക്ഷനുകളും ഇന്ത്യൻ അക്കൗണ്ടിംഗ് സ്റ്റാൻഡേർഡ്സ് അനുസരിച്ചുള്ള ഓപ്പറേഷണൽ എക്സ്പെൻസസിനെ ബേസ് ചെയ്തുള്ളതാണ്.</p>
             </div>
 
             <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
                 <div class="mb-8 text-center">
-                    <label for="modelSelector" class="block text-xl font-semibold text-brand-primary mb-4">ഫ്രാഞ്ചൈസി മോഡൽ തിരഞ്ഞെടുക്കുക:</label>
+                    <label for="modelSelector" class="block text-xl font-semibold text-brand-primary mb-4">Select Franchisee Model:</label>
                     <select id="modelSelector" class="px-4 py-2 rounded-lg border border-gray-300 bg-gray-50 text-gray-800 text-lg font-semibold mb-6 shadow-sm focus:ring-2 focus:ring-brand-secondary focus:border-transparent">
                         <option value="essential">Essential Showroom</option>
                         <option value="signature">Signature Showroom</option>
                         <option value="experience" selected>Experience Hub</option>
                     </select>
 
-                    <label for="salesScenarioButtons" class="block text-xl font-semibold text-brand-primary mb-4">പ്രതിമാസ സെയിൽസ് സാഹചര്യം തിരഞ്ഞെടുക്കുക:</label>
+                    <label for="salesScenarioButtons" class="block text-xl font-semibold text-brand-primary mb-4">Select Monthly Sales Scenario:</label>
                     <div id="salesScenarioButtons" class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
                         <button class="tab-button active" data-scenario="average">Average Sales (₹0 Lakhs)</button>
                         <button class="tab-button" data-scenario="medium">Medium Sales (₹0 Lakhs)</button>
@@ -393,9 +431,9 @@
                 </div>
 
                 <div class="mt-8 text-center">
-                    <p class="text-lg text-gray-700 mt-4">പ്രവചിക്കപ്പെട്ട ബ്രേക്ക്-ഈവൻ സമയം:</p>
-                    <p id="breakEvenDisplay" class="text-3xl font-bold text-brand-primary mt-2">കണക്കാക്കുന്നു...</p>
-                    <p class="text-sm text-gray-500 mt-4">പ്രൊജക്ഷൻസ് ഏകദേശ കണക്കുകളാണ്. യഥാർത്ഥ ഫലങ്ങൾ വ്യത്യാസപ്പെടാം. വിശദമായ വാർഷിക ലാഭത്തിനായി, ചാർട്ട് കാണുക.</p>
+                    <p class="text-lg text-gray-700 mt-4">Projected Break-even Time:</p>
+                    <p id="breakEvenDisplay" class="text-3xl font-bold text-brand-primary mt-2">Calculating...</p>
+                    <p class="text-sm text-gray-500 mt-4">പ്രൊജക്ഷനുകൾ എസ്റ്റിമേറ്റ്സ് ആണ്. ആക്ച്വൽ റിസൾട്ട്സ് വേരി ചെയ്യാം. ഡീറ്റെയിൽഡ് ഇയർലി പ്രോഫിറ്റിനായി, ചാർട്ട് കാണുക.</p>
                 </div>
             </div>
         </section>
@@ -404,28 +442,28 @@
         <section class="bg-white py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto mb-12">
                 <h2 class="text-4xl font-bold text-brand-primary mb-4">Why Choose Sabhan: Your Strategic Advantages</h2>
-                <p class="text-lg text-gray-600">സബാൻ ഫർണിച്ചറിന്റെ തനതായ മൂല്യനിർണ്ണയം, ഇന്റീരിയർ ഡിസൈൻ സർവീസുകളെയും വലിയ, എക്സ്പീരിയൻസ്-ഡ്രൈവൺ ഷോറൂമുകളെയും സമന്വയിപ്പിക്കുന്നു, 10 വർഷത്തെ ട്രസ്റ്റിന്റെ പിൻബലത്തോടെ. ഇത് കസ്റ്റമറുടെ ഹോം ഫർണിഷിംഗ് ബഡ്ജറ്റിന്റെ വലിയൊരു പങ്ക് നേടാനും ഉയർന്ന മൂല്യം നൽകാനും കേരളത്തിലെ വളരുന്ന മാർക്കറ്റിൽ ഒരു പ്രധാന കോമ്പറ്റീറ്റീവ് അഡ്വാന്റേജ് സ്ഥാപിക്കാനും ഞങ്ങളെ സഹായിക്കുന്നു.</p>
+                <p class="text-lg text-gray-600">സബാൻ ഫർണിച്ചറിന്റെ യൂണീക്ക് വാല്യൂ പ്രൊപ്പോസിഷൻ, ഇന്റീരിയർ ഡിസൈൻ സർവീസസിനെ ലാർജ്, എക്സ്പീരിയൻസ്-ഡ്രിവൺ ഷോറൂമുകളുമായി ഇന്റഗ്രേറ്റ് ചെയ്യുന്നു, 10 വർഷത്തെ ലെഗസി ഓഫ് ട്രസ്റ്റ് ഇതിനു ബാക്ക്ഡ് ആണ്. ഇത് കസ്റ്റമറുടെ ഹോം ഫർണിഷിംഗ് ബഡ്ജറ്റിന്റെ ഒരു ലാർജർ ഷെയർ ക്യാപ്ചർ ചെയ്യാനും, ഹയർ വാല്യൂ ഡെലിവർ ചെയ്യാനും, കേരളത്തിലെ എവോൾവിംഗ് മാർക്കറ്റിൽ ഒരു സിഗ്നിഫിക്കന്റ് കോമ്പറ്റീറ്റീവ് അഡ്വാന്റേജ് എസ്റ്റാബ്ലിഷ് ചെയ്യാനും ഞങ്ങളെ അലോ ചെയ്യുന്നു.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 <div class="flex items-start space-x-4 p-4 bg-brand-light rounded-lg shadow-sm">
                     <div class="bg-brand-secondary text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center text-2xl font-bold">✓</div>
                     <div>
-                        <h3 class="text-xl font-bold text-gray-800">ഏറ്റവും സുരക്ഷിതമായ ഇൻവെസ്റ്റ്മെന്റ് ഓപ്ഷൻ</h3>
-                        <p class="text-gray-600 mt-1">കുറഞ്ഞ ക്യാപിറ്റൽ റിസ്ക്; ഫ്രാഞ്ചൈസർ ഇൻവെന്ററിയും അസറ്റുകളും സ്വന്തമാക്കുന്നു, വ്യക്തമായ എക്സിറ്റ് സ്ട്രാറ്റജിയോടെ.</p>
+                        <h3 class="text-xl font-bold text-gray-800">Safest Investment Option</h3>
+                        <p class="text-gray-600 mt-1">ലോ കാപിറ്റൽ അറ്റ് റിസ്ക്; ഫ്രാഞ്ചൈസി ഇൻവെന്ററി & അസറ്റ്സ് ഓൺ ചെയ്യുന്നു, ഒരു ക്ലിയർ എക്സിറ്റ് സ്ട്രാറ്റജിയുമായി.</p>
                     </div>
                 </div>
                 <div class="flex items-start space-x-4 p-4 bg-brand-light rounded-lg shadow-sm">
                     <div class="bg-brand-secondary text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center text-2xl font-bold">✓</div>
                     <div>
-                        <h3 class="text-xl font-bold text-gray-800">തെളിയിക്കപ്പെട്ടതും വിജയകരവുമായ FOCO മോഡൽ</h3>
-                        <p class="text-gray-600 mt-1">ഞങ്ങൾ എല്ലാ ഓപ്പറേഷൻസും കൈകാര്യം ചെയ്യുന്നു; നിങ്ങൾക്ക് നെറ്റ് പ്രോഫിറ്റിന്റെ 70% വരെ ലഭിക്കുന്നു.</p>
+                        <h3 class="text-xl font-bold text-gray-800">Proven & Successful FOCO Model</h3>
+                        <p class="text-gray-600 mt-1">ഞങ്ങൾ എല്ലാ ഓപ്പറേഷൻസും മാനേജ് ചെയ്യുന്നു; നിങ്ങൾക്ക് നെറ്റ് പ്രോഫിറ്റിന്റെ 70% വരെ ഏൺ ചെയ്യാം.</p>
                     </div>
                 </div>
                 <div class="flex items-start space-x-4 p-4 bg-brand-light rounded-lg shadow-sm">
                     <div class="bg-brand-secondary text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center text-2xl font-bold">✓</div>
                     <div>
-                        <h3 class="text-xl font-bold text-gray-800">ശക്തമായ ബ്രാൻഡ് റെപ്യൂട്ടേഷൻ</h3>
-                        <p class="text-gray-600 mt-1">കേരളത്തിൽ ഒരു ദശാബ്ദക്കാലത്തെ ഗുഡ്‌വില്ലും കസ്റ്റമർ ലോയൽറ്റിയുമുള്ള വിശ്വസനീയമായ പേരിന്റെ പ്രയോജനം നേടുക.</p>
+                        <h3 class="text-xl font-bold text-gray-800">Strong Brand Reputation</h3>
+                        <p class="text-gray-600 mt-1">ഒരു ഡെക്കേഡ് ഓഫ് ഗുഡ്‌വില്ലും കസ്റ്റമർ ലോയൽറ്റിയുമുള്ള ഒരു ട്രസ്റ്റഡ് നെയിമിന്റെ ബെനിഫിറ്റ് നേടുക.</p>
                     </div>
                 </div>
             </div>
@@ -433,21 +471,21 @@
 
         <!-- Call to Action -->
         <section class="bg-brand-primary py-20 px-4 text-center text-white rounded-t-3xl shadow-xl">
-            <h2 class="text-4xl font-bold mb-4">വിജയം കെട്ടിപ്പടുക്കാൻ തയ്യാറാണോ?</h2>
-            <p class="text-xl mt-4 text-gray-300 max-w-3xl mx-auto">അടുത്ത ഘട്ടത്തിലേക്ക് കടക്കുക. ലൊക്കേഷൻ-നിർദ്ദിഷ്ട പ്രൊജക്ഷൻസ് ചർച്ച ചെയ്യാനും ഞങ്ങളുടെ FOCO മോഡൽ നിങ്ങൾക്ക് എങ്ങനെ മികച്ച വരുമാനം നൽകുമെന്ന് കണ്ടെത്താനും ഒരു പേഴ്സണലൈസ്ഡ് മീറ്റിംഗ് ഷെഡ്യൂൾ ചെയ്യുക.</p>
+            <h2 class="text-4xl font-bold mb-4">Ready to Build Your Success?</h2>
+            <p class="text-xl mt-4 text-gray-300 max-w-3xl mx-auto">അടുത്ത സ്റ്റെപ്പ് എടുക്കുക. ലൊക്കേഷൻ-സ്പെസിഫിക് പ്രൊജക്ഷനുകൾ ഡിസ്കസ് ചെയ്യാനും ഞങ്ങളുടെ FOCO മോഡൽ നിങ്ങൾക്ക് എങ്ങനെ സ്ട്രോങ്ങ് റിട്ടേൺസ് ഡെലിവർ ചെയ്യുമെന്ന് എക്സ്പ്ലോർ ചെയ്യാനും ഒരു പേഴ്സണലൈസ്ഡ് മീറ്റിംഗ് ഷെഡ്യൂൾ ചെയ്യുക.</p>
             <div class="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="tel:9072698111" class="bg-brand-secondary text-white font-bold py-4 px-8 rounded-full text-xl inline-block hover:bg-yellow-500 transition-colors shadow-lg transform hover:scale-105">ഫ്രാഞ്ചൈസി മാനേജരുമായി ബന്ധപ്പെടുക: 9072698111</a>
-                <a href="https://wa.me/919072698111" target="_blank" class="bg-green-500 text-white font-bold py-4 px-8 rounded-full text-xl inline-block hover:bg-green-600 transition-colors shadow-lg transform hover:scale-105">വാട്ട്‌സ്ആപ്പ് ചെയ്യുക</a>
+                <a href="tel:9072698111" class="bg-brand-secondary text-white font-bold py-4 px-8 rounded-full text-xl inline-block hover:bg-yellow-500 transition-colors shadow-lg transform hover:scale-105">Contact Franchisee Manager: 9072698111</a>
+                <a href="https://wa.me/919072698111" target="_blank" class="bg-green-500 text-white font-bold py-4 px-8 rounded-full text-xl inline-block hover:bg-green-600 transition-colors shadow-lg transform hover:scale-105">WhatsApp Us</a>
             </div>
-            <p class="mt-6 text-gray-400">ഞങ്ങളുടെ വെബ്സൈറ്റ് സന്ദർശിക്കുക: <a href="https://www.sabhan.in" target="_blank" class="underline hover:text-white">www.sabhan.in</a></p>
-            <p class="mt-2 text-gray-400">അല്ലെങ്കിൽ ഇമെയിൽ ചെയ്യുക: <a href="mailto:info@sabhan.in?subject=Franchisee%20Inquiry" class="underline hover:text-white">info@sabhan.in</a> (Subject Line: Franchisee)</p>
+            <p class="mt-6 text-gray-400">Visit our website: <a href="https://www.sabhan.in" target="_blank" class="underline hover:text-white">www.sabhan.in</a></p>
+            <p class="mt-2 text-gray-400">Or email: <a href="mailto:info@sabhan.in?subject=Franchisee%20Inquiry" class="underline hover:text-white">info@sabhan.in</a> (Subject Line: Franchisee)</p>
         </section>
 
         <!-- Social Media Poster -->
         <section class="py-16 px-4 md:px-8 bg-brand-light">
             <div class="text-center max-w-4xl mx-auto">
                 <h2 class="text-4xl font-bold text-brand-primary mb-8">Thank You for Your Interest!</h2>
-                <p class="text-lg text-gray-600 mb-12">നിങ്ങളുടെ താൽപ്പര്യത്തിന് നന്ദി. നിങ്ങളുടെ സൗകര്യത്തിനായി ഒരു സംക്ഷിപ്ത വിവരവും ഞങ്ങളുടെ കോൺടാക്റ്റ് വിവരങ്ങളും ഇവിടെ നൽകുന്നു.</p>
+                <p class="text-lg text-gray-600 mb-12">നിങ്ങളുടെ ടൈമിനും കൺസിഡറേഷനും ഞങ്ങൾ അപ്രീഷിയേറ്റ് ചെയ്യുന്നു. നിങ്ങളുടെ കൺവീനിയൻസിനായി ഒരു ക്വിക്ക് സമ്മറിയും ഞങ്ങളുടെ കോൺടാക്റ്റ് ഡീറ്റെയിൽസും ഇവിടെയുണ്ട്.</p>
                 <img src="https://i.postimg.cc/R0dXTgS2/Poster-franchisee-sm.png" alt="Social Media Franchisee Poster" class="w-full max-w-2xl mx-auto rounded-xl shadow-lg">
             </div>
         </section>
@@ -516,7 +554,183 @@
         values: [6000000, 2000000, 2950000, 1200000, 1000000, 1250000, 800000] 
     };
 
-    // --- Chart Initialization for each model's investment breakdown ---
+    // Function to get ROI text based on selected model (MOVED OUT OF DOMContentLoaded)
+    function getRoiTextForModel(modelType) {
+        switch (modelType) {
+            case 'essential':
+                return '10%+ Return';
+            case 'signature':
+                return '12%+ Return';
+            case 'experience':
+                return '14%+ Return';
+            default:
+                return '14%+ Return'; // Default for safety
+        }
+    }
+
+    // --- ROI Calculation Logic for All Models ---
+    // Net Profit Before Investor Share Rate is derived from 4119406.78 / (6000000 * 12) from Experience Hub's Excel
+    const netProfitBeforeInvestorShareRate = 0.057213983; 
+
+    const ROI_MODELS_CONFIG = {
+        essential: {
+            totalInvestment: 11100000 - 1200000, // 1.11 Cr - 12 Lakhs Lease Advance = 99 Lakhs
+            investorProfitShare: 0.70,
+            salesScenarios: { average: 4000000, medium: 6000000, high: 8000000 }
+        },
+        signature: {
+            totalInvestment: 13200000 - 1200000, // 1.32 Cr - 12 Lakhs Lease Advance = 1.2 Cr
+            investorProfitShare: 0.70,
+            salesScenarios: { average: 5000000, medium: 7000000, high: 9000000 }
+        },
+        experience: {
+            totalInvestment: 15200000 - 1200000, // 1.52 Cr - 12 Lakhs Lease Advance = 1.4 Cr
+            investorProfitShare: 0.70,
+            salesScenarios: { average: 6000000, medium: 8000000, high: 10000000 }
+        }
+    };
+
+    function calculateROI(modelType, monthlyRevenueIncludingGST) {
+        const config = ROI_MODELS_CONFIG[modelType];
+        const annualData = [];
+        let cumulativeInvestorProfit = 0;
+        let breakEvenMonth = -1;
+
+        const currentAnnualNetProfitBeforeInvestorShare = monthlyRevenueIncludingGST * 12 * netProfitBeforeInvestorShareRate;
+        const annualInvestorShare = currentAnnualNetProfitBeforeInvestorShare * config.investorProfitShare;
+        
+        // Loop up to 10 years (120 months) for break-even calculation
+        for (let month = 1; month <= 120; month++) { 
+            const investorShareMonthlyAccrual = annualInvestorShare / 12;
+            cumulativeInvestorProfit += investorShareMonthlyAccrual;
+            
+            if (breakEvenMonth === -1 && cumulativeInvestorProfit >= config.totalInvestment) {
+                breakEvenMonth = month;
+            }
+
+            if (month % 12 === 0 && month <= 60) { // Only store up to 5 years for chart data
+                annualData.push(cumulativeInvestorProfit);
+            }
+        }
+
+        const finalCumulativeProfitForDisplay = annualData.length > 0 ? annualData[annualData.length - 1] : 0;
+
+        let breakEvenDisplay = '';
+        if (breakEvenMonth !== -1) {
+            const years = Math.floor(breakEvenMonth / 12);
+            const months = breakEvenMonth % 12;
+            
+            if (years > 0 && months > 0) {
+                breakEvenDisplay = `${years} years and ${months} months`;
+            } else if (years > 0) {
+                breakEvenDisplay = `${years} years`;
+            } else {
+                breakEvenDisplay = `${months} months`;
+            }
+        } else {
+            // If breakEvenMonth is still -1 after 120 months (10 years), then it's beyond 10 years
+            breakEvenDisplay = 'Beyond 10 years'; 
+        }
+
+        return { profitData: annualData, breakEvenTime: breakEvenDisplay, cumulativeFinalProfit: finalCumulativeProfitForDisplay };
+    }
+
+    // --- ROI Calculator for the Common Presentation (Interactive Model Selector) ---
+    const roiProjectionCtxCommon = document.getElementById('roiProjectionChart'); 
+    let roiChartCommon;
+
+    function formatCurrency(value) {
+        // Formats values into Lakhs with 2 decimal places, adding '₹' prefix.
+        return `₹${(value / 100000).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Lakhs`;
+    }
+
+    function updateRoiChartCommon(modelType, salesScenarioKey) {
+        const modelConfig = ROI_MODELS_CONFIG[modelType];
+        const monthlyRevenue = modelConfig.salesScenarios[salesScenarioKey];
+        const result = calculateROI(modelType, monthlyRevenue);
+        
+        const breakEvenDisplayElement = document.getElementById('breakEvenDisplay');
+
+        if (breakEvenDisplayElement) {
+            breakEvenDisplayElement.textContent = result.breakEvenTime;
+        }
+
+        if (roiProjectionCtxCommon) { 
+            if (roiChartCommon) {
+                roiChartCommon.data.datasets[0].data = result.profitData;
+                roiChartCommon.update();
+            } else {
+                roiChartCommon = new Chart(roiProjectionCtxCommon.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                        datasets: [{
+                            label: 'Cumulative Investor Profit',
+                            data: result.profitData,
+                            fill: true,
+                            backgroundColor: 'rgba(225, 169, 49, 0.1)',
+                            borderColor: '#E1A931',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            pointBackgroundColor: '#E1A931',
+                            pointRadius: 5
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: (context) => `Cumulative Profit: ${formatCurrency(context.raw)}`
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: (value) => `${formatCurrency(value).replace(' Lakhs', 'L')}` // Shorten "Lakhs" to "L" on y-axis
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false // Hide x-axis grid lines for cleaner look
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    }
+
+    // Initial setup for the Common ROI Calculator: Updates sales buttons and triggers chart update
+    function updateScenarioButtons() {
+        const modelSelector = document.getElementById('modelSelector'); 
+        const selectedModel = modelSelector.value;
+        const scenarios = ROI_MODELS_CONFIG[selectedModel].salesScenarios;
+
+        salesScenarioButtons[0].textContent = `Average Sales (₹${(scenarios.average / 100000).toFixed(0)} Lakhs)`;
+        salesScenarioButtons[0].dataset.scenario = 'average';
+        salesScenarioButtons[1].textContent = `Medium Sales (₹${(scenarios.medium / 100000).toFixed(0)} Lakhs)`;
+        salesScenarioButtons[1].dataset.scenario = 'medium';
+        salesScenarioButtons[2].textContent = `High Sales (₹${(scenarios.high / 100000).toFixed(0)} Lakhs)`;
+        salesScenarioButtons[2].dataset.scenario = 'high';
+
+        // Set default active to average and update chart
+        salesScenarioButtons.forEach(btn => btn.classList.remove('active'));
+        salesScenarioButtons[0].classList.add('active');
+        updateRoiChartCommon(selectedModel, 'average');
+
+        // Also update the dynamic ROI text in the "Key Investor Benefits" section
+        const dynamicRoiDisplay = document.getElementById('dynamic-roi');
+        if (dynamicRoiDisplay) {
+            dynamicRoiDisplay.textContent = getRoiTextForModel(selectedModel);
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         // Essential Chart
         const essentialChartCanvas = document.getElementById('essentialChart');
@@ -524,7 +738,7 @@
             new Chart(essentialChartCanvas.getContext('2d'), {
                 type: 'doughnut',
                 data: {
-                    labels: essentialInvestmentData.labels,
+                    labels: ['Initial Inventory', 'License Fee', 'Showroom Setup Cost', 'Lease Advance', 'Working Capital', 'Inauguration Expenses'],
                     datasets: [{
                         data: essentialInvestmentData.values,
                         backgroundColor: chartColors,
@@ -542,7 +756,7 @@
             new Chart(signatureChartCanvas.getContext('2d'), {
                 type: 'doughnut',
                 data: {
-                    labels: signatureInvestmentData.labels,
+                    labels: ['Initial Inventory', 'License Fee', 'Showroom Setup Cost', 'Lease Advance', 'Working Capital', 'Inauguration Expenses'],
                     datasets: [{
                         data: signatureInvestmentData.values,
                         backgroundColor: chartColors,
@@ -560,7 +774,7 @@
             new Chart(experienceChartCanvas.getContext('2d'), {
                 type: 'doughnut',
                 data: {
-                    labels: experienceInvestmentData.labels,
+                    labels: ['Initial Inventory', 'Interior Designing Channel', 'Showroom Setup Cost', 'Lease Advance', 'Working Capital Fund', 'Inauguration Expenses', 'License Fee'], 
                     datasets: [{
                         data: experienceInvestmentData.values, 
                         backgroundColor: chartColors,
@@ -669,167 +883,41 @@
             });
         });
 
+        // Initialize investor benefits tabs
+        const investorBenefitTabs = document.querySelectorAll('#investorBenefitTabs .tab-button-small');
+        const investorBenefitContent = document.getElementById('investorBenefitContent');
+        const dynamicRoiDisplay = document.getElementById('dynamic-roi');
+        
+        investorBenefitTabs.forEach(button => {
+            button.addEventListener('click', () => {
+                investorBenefitTabs.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const tabId = button.dataset.tab;
+                investorBenefitContent.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                document.getElementById(`${tabId}-content`).classList.remove('hidden');
+
+                // Update dynamic ROI when "High ROI" tab is active
+                if (tabId === 'roi') {
+                    const selectedModel = modelSelectorElement ? modelSelectorElement.value : 'experience';
+                    const roiText = getRoiTextForModel(selectedModel);
+                    dynamicRoiDisplay.textContent = roiText;
+                }
+            });
+        });
+
+        // Initial setting of dynamic ROI text based on default selected model
+        if (dynamicRoiDisplay) {
+            const initialSelectedModel = modelSelectorElement ? modelSelectorElement.value : 'experience';
+            dynamicRoiDisplay.textContent = getRoiTextForModel(initialSelectedModel);
+        }
+
+
         // Initial call only after DOM is loaded and elements are guaranteed to exist
         updateScenarioButtons(); 
     });
-
-
-    // --- ROI Calculation Logic for All Models ---
-    // Net Profit Before Investor Share Rate is derived from 4119406.78 / (6000000 * 12) from Experience Hub's Excel
-    const netProfitBeforeInvestorShareRate = 0.057213983; 
-
-    const ROI_MODELS_CONFIG = {
-        essential: {
-            totalInvestment: 9900000, // 1.11 Cr - 12Lakhs Lease Advance
-            investorProfitShare: 0.70,
-            salesScenarios: { average: 4000000, medium: 6000000, high: 8000000 }
-        },
-        signature: {
-            totalInvestment: 12000000, // 1.32 Cr - 12 Lakhs Lease Advance
-            investorProfitShare: 0.70,
-            salesScenarios: { average: 5000000, medium: 7000000, high: 9000000 }
-        },
-        experience: {
-            totalInvestment: 14000000, // 1.52 Cr - 12 Lakhs Lease Advance
-            investorProfitShare: 0.70,
-            salesScenarios: { average: 6000000, medium: 8000000, high: 10000000 }
-        }
-    };
-
-    function calculateROI(modelType, monthlyRevenueIncludingGST) {
-        const config = ROI_MODELS_CONFIG[modelType];
-        const annualData = [];
-        let cumulativeInvestorProfit = 0;
-        let breakEvenMonth = -1;
-
-        const currentAnnualNetProfitBeforeInvestorShare = monthlyRevenueIncludingGST * 12 * netProfitBeforeInvestorShareRate;
-        const annualInvestorShare = currentAnnualNetProfitBeforeInvestorShare * config.investorProfitShare;
-        
-        // Loop up to 10 years (120 months) for break-even calculation
-        for (let month = 1; month <= 120; month++) { 
-            const investorShareMonthlyAccrual = annualInvestorShare / 12;
-            cumulativeInvestorProfit += investorShareMonthlyAccrual;
-            
-            if (breakEvenMonth === -1 && cumulativeInvestorProfit >= config.totalInvestment) {
-                breakEvenMonth = month;
-            }
-
-            if (month % 12 === 0 && month <= 60) { // Only store up to 5 years for chart data
-                annualData.push(cumulativeInvestorProfit);
-            }
-        }
-
-        const finalCumulativeProfitForDisplay = annualData.length > 0 ? annualData[annualData.length - 1] : 0;
-
-        let breakEvenDisplay = '';
-        // Correction 4: Always format break-even as x years and y months
-        if (breakEvenMonth !== -1) {
-            const years = Math.floor(breakEvenMonth / 12);
-            const months = breakEvenMonth % 12;
-            breakEvenDisplay = `${years} years`;
-            if (months > 0) {
-                breakEvenDisplay += ` and ${months} months`;
-            }
-        } else {
-            // If breakEvenMonth is still -1 after 120 months (10 years), then it's beyond 10 years
-            breakEvenDisplay = 'Beyond 10 years'; 
-        }
-
-        return { profitData: annualData, breakEvenTime: breakEvenDisplay, cumulativeFinalProfit: finalCumulativeProfitForDisplay };
-    }
-
-    // --- ROI Calculator for the Common Presentation (Interactive Model Selector) ---
-    const roiProjectionCtxCommon = document.getElementById('roiProjectionChart'); 
-    let roiChartCommon;
-
-    function formatCurrency(value) {
-        // Formats values into Lakhs with 2 decimal places, adding '₹' prefix.
-        return `₹${(value / 100000).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Lakhs`;
-    }
-
-    function updateRoiChartCommon(modelType, salesScenarioKey) {
-        const modelConfig = ROI_MODELS_CONFIG[modelType];
-        const monthlyRevenue = modelConfig.salesScenarios[salesScenarioKey];
-        const result = calculateROI(modelType, monthlyRevenue);
-        
-        const breakEvenDisplayElement = document.getElementById('breakEvenDisplay');
-
-        if (breakEvenDisplayElement) {
-            breakEvenDisplayElement.textContent = result.breakEvenTime;
-        }
-
-        if (roiProjectionCtxCommon) { 
-            if (roiChartCommon) {
-                roiChartCommon.data.datasets[0].data = result.profitData;
-                roiChartCommon.update();
-            } else {
-                roiChartCommon = new Chart(roiProjectionCtxCommon.getContext('2d'), {
-                    type: 'line',
-                    data: {
-                        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
-                        datasets: [{
-                            label: 'Cumulative Investor Profit',
-                            data: result.profitData,
-                            fill: true,
-                            backgroundColor: 'rgba(225, 169, 49, 0.1)',
-                            borderColor: '#E1A931',
-                            borderWidth: 2,
-                            tension: 0.4,
-                            pointBackgroundColor: '#E1A931',
-                            pointRadius: 5
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false },
-                            tooltip: {
-                                callbacks: {
-                                    label: (context) => `Cumulative Profit: ${formatCurrency(context.raw)}`
-                                }
-                            }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    callback: (value) => `${formatCurrency(value).replace(' Lakhs', 'L')}` // Shorten "Lakhs" to "L" on y-axis
-                                }
-                            },
-                            x: {
-                                grid: {
-                                    display: false // Hide x-axis grid lines for cleaner look
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-        }
-    }
-
-    // Initial setup for the Common ROI Calculator: Updates sales buttons and triggers chart update
-    function updateScenarioButtons() {
-        const modelSelector = document.getElementById('modelSelector'); 
-        const selectedModel = modelSelector.value;
-        const scenarios = ROI_MODELS_CONFIG[selectedModel].salesScenarios;
-
-        const salesScenarioButtons = document.querySelectorAll('#salesScenarioButtons .tab-button');
-        
-        salesScenarioButtons[0].textContent = `Average Sales (₹${(scenarios.average / 100000).toFixed(0)} Lakhs)`;
-        salesScenarioButtons[0].dataset.scenario = 'average';
-        salesScenarioButtons[1].textContent = `Medium Sales (₹${(scenarios.medium / 100000).toFixed(0)} Lakhs)`;
-        salesScenarioButtons[1].dataset.scenario = 'medium';
-        salesScenarioButtons[2].textContent = `High Sales (₹${(scenarios.high / 100000).toFixed(0)} Lakhs)`;
-        salesScenarioButtons[2].dataset.scenario = 'high';
-
-        // Set default active to average and update chart
-        salesScenarioButtons.forEach(btn => btn.classList.remove('active'));
-        salesScenarioButtons[0].classList.add('active');
-        updateRoiChartCommon(selectedModel, 'average');
-    }
-
 </script>
 </body>
 </html>
