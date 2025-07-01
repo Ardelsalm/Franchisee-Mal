@@ -442,7 +442,7 @@
         <section class="bg-white py-16 px-4 md:px-8">
             <div class="text-center max-w-4xl mx-auto mb-12">
                 <h2 class="text-4xl font-bold text-brand-primary mb-4">Why Choose Sabhan: Your Strategic Advantages</h2>
-                <p class="text-lg text-gray-600">സബാൻ ഫർണിച്ചറിന്റെ യൂണീക്ക് വാല്യൂ പ്രൊപ്പോസിഷൻ, ഇന്റീരിയർ ഡിസൈൻ സർവീസസിനെ ലാർജ്, എക്സ്പീരിയൻസ്-ഡ്രിവൺ ഷോറൂമുകളുമായി ഇന്റഗ്രേറ്റ് ചെയ്യുന്നു, 10 വർഷത്തെ ലെഗസി ഓഫ് ട്രസ്റ്റ് ഇതിനു ബാക്ക്ഡ് ആണ്. ഇത് കസ്റ്റമറുടെ ഹോം ഫർണിഷിംഗ് ബഡ്ജറ്റിന്റെ ഒരു ലാർജർ ഷെയർ ക്യാപ്ചർ ചെയ്യാനും, ഹയർ വാല്യൂ ഡെലിവർ ചെയ്യാനും, കേരളത്തിലെ എവോൾവിംഗ് മാർക്കറ്റിൽ ഒരു സിഗ്നിഫിക്കന്റ് കോമ്പറ്റീറ്റീവ് അഡ്വാന്റേജ് എസ്റ്റാബ്ലിഷ് ചെയ്യാനും ഞങ്ങളെ അലോ ചെയ്യുന്നു.</p>
+                <p class="text-lg text-gray-600">സബാൻ ഫർണിച്ചർ ഇന്റീരിയർ ഡിസൈൻ സേവനങ്ങളും വലിയ എക്സ്പീരിയൻസ്-ഡ്രിവൺ ഷോറൂമുകളും ഒരുമിച്ച് നൽകുന്നു. ഇത് 10 വർഷത്തിലേറെയുള്ള വിശ്വാസം കൊണ്ടാണ് പിന്തുണയ്ക്കപ്പെടുന്നത്. ഈ മോഡൽ കസ്റ്റമറുടെ ഫർണിച്ചർ ബജറ്റിൽ നിന്നും വലിയൊരു ഷെയർ ക്യാപ്ചർ ചെയ്യാനും, കൂടുതൽ മൂല്യമുള്ള സേവനങ്ങൾ നൽകാനും, കൂടാതെ കേരളത്തിലെ മാറുന്ന വിപണിയിൽ സബാനെ കൂടുതൽ ശക്തിപ്പെടുത്താനും സഹായിക്കുന്നു.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 <div class="flex items-start space-x-4 p-4 bg-brand-light rounded-lg shadow-sm">
@@ -656,53 +656,63 @@
         }
 
         if (roiProjectionCtxCommon) { 
+            // Destroy existing chart instance if it exists to ensure proper re-rendering
             if (roiChartCommon) {
-                roiChartCommon.data.datasets[0].data = result.profitData;
-                roiChartCommon.update();
-            } else {
-                roiChartCommon = new Chart(roiProjectionCtxCommon.getContext('2d'), {
-                    type: 'line',
-                    data: {
-                        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
-                        datasets: [{
-                            label: 'Cumulative Investor Profit',
-                            data: result.profitData,
-                            fill: true,
-                            backgroundColor: 'rgba(225, 169, 49, 0.1)',
-                            borderColor: '#E1A931',
-                            borderWidth: 2,
-                            tension: 0.4,
-                            pointBackgroundColor: '#E1A931',
-                            pointRadius: 5
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false },
-                            tooltip: {
-                                callbacks: {
-                                    label: (context) => `Cumulative Profit: ${formatCurrency(context.raw)}`
-                                }
+                roiChartCommon.destroy();
+            }
+            
+            roiChartCommon = new Chart(roiProjectionCtxCommon.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                    datasets: [{
+                        label: 'Cumulative Investor Profit',
+                        data: result.profitData,
+                        fill: true,
+                        backgroundColor: 'rgba(225, 169, 49, 0.1)',
+                        borderColor: '#E1A931',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        pointBackgroundColor: '#E1A931',
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: (context) => `Cumulative Profit: ${formatCurrency(context.raw)}`
                             }
                         },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    callback: (value) => `${formatCurrency(value).replace(' Lakhs', 'L')}` // Shorten "Lakhs" to "L" on y-axis
-                                }
-                            },
-                            x: {
-                                grid: {
-                                    display: false // Hide x-axis grid lines for cleaner look
+                        // Ensure tooltips for investment breakdown charts show correct labels
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    return Array.isArray(label) ? label.join(' ') : label;
                                 }
                             }
                         }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: (value) => `${formatCurrency(value).replace(' Lakhs', 'L')}` // Shorten "Lakhs" to "L" on y-axis
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false // Hide x-axis grid lines for cleaner look
+                            }
+                        }
                     }
-                });
-            }
+                }
+            });
         }
     }
 
@@ -712,6 +722,8 @@
         const selectedModel = modelSelector.value;
         const scenarios = ROI_MODELS_CONFIG[selectedModel].salesScenarios;
 
+        const salesScenarioButtons = document.querySelectorAll('#salesScenarioButtons .tab-button'); // Ensure this is correctly selected
+        
         salesScenarioButtons[0].textContent = `Average Sales (₹${(scenarios.average / 100000).toFixed(0)} Lakhs)`;
         salesScenarioButtons[0].dataset.scenario = 'average';
         salesScenarioButtons[1].textContent = `Medium Sales (₹${(scenarios.medium / 100000).toFixed(0)} Lakhs)`;
@@ -727,7 +739,8 @@
         // Also update the dynamic ROI text in the "Key Investor Benefits" section
         const dynamicRoiDisplay = document.getElementById('dynamic-roi');
         if (dynamicRoiDisplay) {
-            dynamicRoiDisplay.textContent = getRoiTextForModel(selectedModel);
+            const currentSelectedModel = modelSelector.value; // Get the currently selected model
+            dynamicRoiDisplay.textContent = getRoiTextForModel(currentSelectedModel);
         }
     }
 
@@ -738,7 +751,7 @@
             new Chart(essentialChartCanvas.getContext('2d'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['Initial Inventory', 'License Fee', 'Showroom Setup Cost', 'Lease Advance', 'Working Capital', 'Inauguration Expenses'],
+                    labels: essentialInvestmentData.labels, // Reverted to English labels
                     datasets: [{
                         data: essentialInvestmentData.values,
                         backgroundColor: chartColors,
@@ -756,7 +769,7 @@
             new Chart(signatureChartCanvas.getContext('2d'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['Initial Inventory', 'License Fee', 'Showroom Setup Cost', 'Lease Advance', 'Working Capital', 'Inauguration Expenses'],
+                    labels: signatureInvestmentData.labels, // Reverted to English labels
                     datasets: [{
                         data: signatureInvestmentData.values,
                         backgroundColor: chartColors,
@@ -774,7 +787,7 @@
             new Chart(experienceChartCanvas.getContext('2d'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['Initial Inventory', 'Interior Designing Channel', 'Showroom Setup Cost', 'Lease Advance', 'Working Capital Fund', 'Inauguration Expenses', 'License Fee'], 
+                    labels: experienceInvestmentData.labels, // Reverted to English labels
                     datasets: [{
                         data: experienceInvestmentData.values, 
                         backgroundColor: chartColors,
@@ -819,7 +832,7 @@
             new Chart(organizedSectorCtx.getContext('2d'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['Unorganized Sector', 'Organized Sector'],
+                    labels: ['Unorganized Sector', 'Organized Sector'], // Reverted to English labels
                     datasets: [{
                         data: [85, 15],
                         backgroundColor: ['#d1d5db', '#044222'],
@@ -840,7 +853,7 @@
             new Chart(buildingDensityCtx.getContext('2d'), {
                 type: 'bar',
                 data: {
-                    labels: ['Thiruvananthapuram', 'Ernakulam', 'Kozhikode', 'Malappuram', 'Thrissur', 'Kannur', 'Kerala Average'], 
+                    labels: ['Thiruvananthapuram', 'Ernakulam', 'Kozhikode', 'Malappuram', 'Thrissur', 'Kannur', 'Kerala Average'], // Reverted to English labels
                     datasets: [{
                         label: 'Buildings/sqkm',
                         data: [34, 30, 28, 25, 24, 20, 16], 
